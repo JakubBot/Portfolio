@@ -1,82 +1,23 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+import timeLine from './gsapAnimations';
 import Images from './images';
 
 import './index.scss';
-// import PortfolioListController from './ListController.js';
 
 gsap.registerPlugin(ScrollToPlugin);
 
-// let navStatus = false;
 let controller = null;
+let tl = null;
 const Navbar = () => {
   const hamburger = useRef(null);
   const [navStatus, setNavStatus] = useState(false);
+
   useEffect(() => {
-    let tl = gsap.timeline({
-      paused: true,
-      onStart: () => {
-        body.classList.add('noscroll');
-      },
-      onReverseComplete: () => {
-        body.classList.remove('noscroll');
-      },
-    });
-
-    tl.set('.menu__images__canvas', { autoAlpha: 0 })
-      .to('.menu__informations', {
-        scaleX: 1,
-        duration: 1.2,
-        ease: 'Expo.easeInOut',
-        transformOrigin: 'left center',
-      })
-      .fromTo(
-        '.menu__images',
-        {
-          width: 0,
-        },
-        {
-          width: '40%',
-          duration: 1.5,
-          ease: 'Expo.easeInOut',
-          transformOrigin: 'left center',
-        }
-      )
-      .from(
-        '.menu__links ul li',
-        {
-          autoAlpha: 0,
-          ease: 'Expo.easeInOut',
-          duration: 2,
-          stagger: 0.1,
-          y: 20,
-        },
-        '<-.3'
-      )
-      .to('.menu__images__canvas', { autoAlpha: 1, duration: 1 }, '>-1');
-    //prevent from seeing nav image on loading page
-    gsap.set('.menu', { autoAlpha: 1 });
-
     const links = document.querySelectorAll('.menu__scroller ul li a');
     const body = document.querySelector('body');
-
-    hamburger.current.addEventListener('click', function () {
-      if (this.getAttribute('aria-expanded') === 'false') {
-        setNavStatus(true);
-        gsap.to(window, { duration: 0.5, scrollTo: 0 }).then(() => {
-          tl.play();
-        });
-
-        this.setAttribute('aria-expanded', 'true');
-      } else {
-        setNavStatus(false);
-
-        tl.reverse();
-
-        this.setAttribute('aria-expanded', 'false');
-      }
-    });
+    tl = timeLine(body);
 
     links.forEach((link) => {
       link.addEventListener('click', () => {
@@ -97,7 +38,7 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    const ListController = import('./ListController.js');
+    const ListController = import('./pixiListController.js');
     ListController.then((Controller) => {
       controller = new Controller.default(navStatus);
       controller.init();
@@ -108,12 +49,30 @@ const Navbar = () => {
     controller && controller.updateNavStatus(navStatus);
   }, [navStatus]);
 
+  const hamburgerClick = (e) => {
+    if (e.target.getAttribute('aria-expanded') === 'false') {
+      setNavStatus(true);
+      gsap.to(window, { duration: 0.5, scrollTo: 0 }).then(() => {
+        tl.play();
+      });
+
+      e.target.setAttribute('aria-expanded', 'true');
+    } else {
+      setNavStatus(false);
+
+      tl.reverse();
+
+      e.target.setAttribute('aria-expanded', 'false');
+    }
+  };
+
   return (
     <div className="wrapper">
       <nav className="nav">
         <div className="nav__hamburger">
           <ion-icon
             ref={hamburger}
+            onClick={hamburgerClick}
             aria-expanded="false"
             className="hamburger"
             style={{ fontSize: '3em' }}
