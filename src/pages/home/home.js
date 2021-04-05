@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
-import { gsap } from 'gsap';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-gsap.registerPlugin(ScrollToPlugin);
+
+import Navbar from '../../components/navbar';
 
 const Home = () => {
- 
-  return <div>
-    <h3>ss</h3>
-
-  </div>;
+  return (
+    <>
+      <Navbar />
+      <h1>s</h1>
+      <h1>s</h1>
+    </>
+  );
 };
 
 export default Home;
