@@ -1,13 +1,17 @@
-import React, { useEffect } from 'react';
-
+import React from 'react';
+import Marquee from '../../components/marquee';
 import Navbar from '../../components/navbar';
 
 const Home = () => {
   return (
     <>
       <Navbar />
-      <h1>s</h1>
-      <h1>s</h1>
+      <Marquee />
+
+      <h1>ss</h1>
+      <h1>ss</h1>
+      <h1>Projects</h1>
+
     </>
   );
 };
