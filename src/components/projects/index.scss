@@ -1,15 +1,37 @@
 @import '../../assets/styles/style.scss';
 
 .projects {
-  padding: 20px 30px;
+  padding: 5px 30px;
   box-sizing: border-box;
   overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
 
+  @include sDesktop {
+    padding: 30px 30px;
+  }
+  @include desktop {
+    padding: 40px 30px;
+  }
+  @include lDesktop {
+    padding: 50px 30px;
+  }
   &__header {
     font-size: 2.5em;
     font-weight: bold;
     margin: 20px 0 50px;
     color: #2f2f2f;
+
+    @include sDesktop {
+      font-size: 4.5em;
+      margin: 20px 0 90px;
+    }
+    @include desktop {
+      font-size: 5.5em;
+    }
+    @include lDesktop {
+      font-size: 6.5em;
+    }
   }
 
   &__images {
@@ -18,10 +40,16 @@
     margin: 20px 0;
     &__image {
       max-width: 360px;
-      max-height: 640px;
+      max-height: 560px;
       width: 80%;
+      height: 60vh;
       min-height: 420px;
       background-color: rgba(0, 0, 0, 0.4);
+
+      @include rwd(1200) {
+        height: 100vh;
+      }
+
       canvas {
         display: block;
         width: 100%;

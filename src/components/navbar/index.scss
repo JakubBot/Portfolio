@@ -29,13 +29,12 @@ body.noscroll {
   &__hamburger {
     padding-top: 100px;
     display: inline-block;
+
+    @include rwd(600) {
+      padding-top: 120px;
+    }
   }
 }
-
-// .nav__hamburger {
-//   padding-top: 100px;
-//   display: inline-block;
-// }
 
 .container {
   flex-grow: 1;
@@ -98,20 +97,6 @@ body.noscroll {
   }
 }
 
-// .main h1 {
-//   color: #efefef;
-//   font-size: 2.5em;
-//   letter-spacing: 2px;
-//   margin: 0;
-// }
-// .main h3 {
-//   display: none;
-//   margin: 0;
-//   color: #ddd;
-//   font-size: 1.8em;
-//   letter-spacing: 2px;
-// }
-
 .socials {
   position: absolute;
   top: 10px;
@@ -132,25 +117,6 @@ body.noscroll {
     }
   }
 }
-
-// .container .hello {
-//   position: absolute;
-//   bottom: 70px;
-//   right: -30px;
-//   transform: rotate(-90deg);
-//   font-size: 40px;
-//   font-weight: bold;
-//   color: #fff;
-//   margin: 0;
-//   letter-spacing: 1px;
-//   display: none;
-// }
-
-// .container .hello span:last-child {
-//   margin-left: 2px;
-//   color: #00000000;
-//   -webkit-text-stroke: 2px rgb(213, 213, 213);
-// }
 
 .menu {
   width: 100%;
@@ -371,120 +337,6 @@ body.noscroll {
   }
 }
 
-// .menu__informations {
-//   transform: scaleX(0);
-//   width: 100%;
-//   height: 100%;
-//   background-color: #fff;
-//   display: flex;
-//   justify-content: center;
-//   align-items: left;
-//   flex-direction: column;
-// }
-
-// .menu__links ul {
-//   padding-left: 10px;
-//   margin: 0;
-// }
-// .menu__links ul li {
-//   list-style-type: none;
-//   color: rgb(196, 196, 196);
-//   padding: 5px 0;
-// }
-// .js-portfolio-item a {
-//   list-style-type: none;
-//   color: rgb(172, 172, 172);
-// }
-// .js-portfolio-item a .number,
-// .js-portfolio-item a .destination,
-// .js-portfolio-item a .describe {
-//   display: inline-block;
-//   margin: 3px;
-//   cursor: pointer;
-// }
-// .js-portfolio-item a .number {
-//   font-size: 0.8em;
-//   display: none;
-// }
-// .js-portfolio-item a .destination {
-//   font-size: 1.8em;
-//   background: linear-gradient(#5b5b5b, #5b5b5b) left no-repeat, #afafaf;
-//   background-size: 0% 100%;
-//   background-clip: text;
-//   -webkit-background-clip: text;
-//   -webkit-text-fill-color: transparent;
-//   transition: background-size 0.7s;
-// }
-// .js-portfolio-item a .describe {
-//   font-size: 1em;
-// }
-
-// .js-portfolio-item:hover a .destination {
-//   background-size: 100% 100%;
-// }
-// .js-portfolio-item:hover a .describe {
-//   color: #a66f2c;
-//   transition: color 0.7s;
-// }
-
-// .menu__images__canvas {
-//   position: absolute;
-//   left: 0;
-//   top: 0;
-//   width: 100%;
-//   height: 100%;
-// }
-// .menu__images__canvas canvas {
-//   width: 100%;
-//   height: 100%;
-// }
-// .menu__images__list {
-//   position: absolute;
-//   left: 0;
-//   top: 0;
-//   width: 100%;
-//   height: 100%;
-//   padding: 0;
-//   list-style: none;
-//   margin: 0;
-// }
-// .menu__images__item {
-//   width: 100%;
-//   height: 100%;
-//   position: absolute;
-//   left: 0;
-//   top: 0;
-// }
-
-// .menu__social-icons {
-//   width: 100%;
-//   margin-top: 40px;
-//   font-size: 2em;
-//   position: relative;
-// }
-
-// .menu__scroller {
-//   position: relative;
-// }
-
-// .menu__scroller .text {
-//   position: absolute;
-//   bottom: -15%;
-//   right: 0%;
-//   transform: rotate(-90deg);
-//   transform-origin: bottom right;
-//   font-size: 26px;
-//   letter-spacing: 3px;
-//   font-weight: bold;
-// }
-// .menu__scroller .text span:first-child {
-//   color: rgb(196, 196, 196);
-// }
-// .menu__scroller .text span:last-child {
-//   color: #00000000;
-//   -webkit-text-stroke: 1px rgb(196, 196, 196);
-// }
-
 ion-icon[name='menu-outline'] {
   color: rgba(21, 18, 24, 0.781);
   cursor: pointer;
@@ -494,105 +346,8 @@ ion-icon:not([name='menu-outline']) {
   font-size: 1em;
 }
 
-@media (min-width: 360px) {
-  // .js-portfolio-item a .number {
-  //   font-size: 1em;
-  // }
-  // .js-portfolio-item a .destination {
-  //   font-size: 2em;
-  // }
-  // .js-portfolio-item a .describe {
-  //   font-size: 1.1em;
-  // }
-  // .menu__scroller .text {
-  //   font-size: 30px;
-  //   letter-spacing: 4px;
-  //   bottom: -2%;
-  // }
-  // .menu__links ul {
-  //   padding-left: 15px;
-  // }
-}
-
-@media (min-width: 500px) {
-  // .menu__links ul li .number {
-  //   font-size: 1.2em;
-  //   display: inline-block;
-  // }
-  // .menu__links ul li .destination {
-  //   font-size: 2.6em;
-  // }
-  // .menu__links ul li .describe {
-  //   font-size: 1.3em;
-  // }
-  // .main h1 {
-  //   font-size: 3em;
-  // }
-  // .container .hello {
-  //   display: initial;
-  // }
-  // .menu__links ul {
-  //   padding-left: 30px;
-  // }
-  // .menu__scroller .text {
-  //   font-size: 42px;
-  //   letter-spacing: 4px;
-  //   bottom: 25%;
-  // }
-  // .menu__links ul {
-  //   padding-left: 20px;
-  // }
-}
-
-// @media screen and (min-width: 640px) {
-//   .main h3 {
-//     display: initial;
-//   }
-// }
-
 @media (min-width: 940px) {
-  // .socials .socials__link__item {
-  //   font-size: 35px;
-  // }
-  // .menu__links ul {
-  //   padding-left: 25px;
-  // }
-  // .container .hello {
-  //   font-size: 50px;
-  // }
-  // .nav {
-  //   width: 100px;
-  // }
-  // .menu__images {
-  //   display: block;
-  //   width: 40%;
-  // }
-  // .menu__informations {
-  //   width: 60%;
-  // }
-  // .menu__links ul li .destination {
-  //   font-size: 3em;
-  // }
-  // .menu__links ul li .describe {
-  //   font-size: 1.2em;
-  // }
   ion-icon:not([name='menu-outline']) {
     margin: 0 5px;
   }
-  // .menu__scroller .text {
-  //   font-size: 50px;
-  //   bottom: 40%;
-  // }
-}
-
-@media (min-width: 1200px) {
-  // .nav {
-  //   width: 120px;
-  // }
-  // .menu__links ul li .destination {
-  //   font-size: 3.3em;
-  // }
-  // .menu__links ul li .describe {
-  //   font-size: 1.5em;
-  // }
 }

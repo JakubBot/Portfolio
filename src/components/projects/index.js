@@ -12,13 +12,13 @@ const Projects = () => {
   return (
     <>
       <div className="projects">
-        <header className="projects__header">Projects</header>
+        <header className="projects__header">My Work</header>
 
         <div className="projects__images">
           <div
             className="projects__images__image js-liquid-image"
             data-displacement-map={Images.DisplacementEffect}
-            data-image={Images.ChessImg}
+            data-image={Images.Chess}
           ></div>
           <p className="projects__images__description">Chess app</p>
         </div>
@@ -26,9 +26,17 @@ const Projects = () => {
           <div
             className="projects__images__image js-liquid-image"
             data-displacement-map={Images.DisplacementEffect}
-            data-image={Images.ChessImg}
+            data-image={Images.OnlineShop}
           ></div>
           <p className="projects__images__description">Shop app</p>
+        </div>
+        <div className="projects__images">
+          <div
+            className="projects__images__image js-liquid-image"
+            data-displacement-map={Images.DisplacementEffect}
+            data-image={Images.Portfolio}
+          ></div>
+          <p className="projects__images__description">Portfolio</p>
         </div>
       </div>
     </>
