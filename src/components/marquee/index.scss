@@ -1,83 +1,70 @@
-.menu__item {
+@import '../../assets/styles/style.scss';
+
+.marquee {
   position: relative;
   overflow: hidden;
   min-height: 140px;
-
   font-weight: bold;
   font-style: italic;
   font-size: 40px;
   color: #ccc;
-}
-.marquee {
-  position: absolute;
-  top: 50%;
-  left: 70%;
-  transform: translate(-50%, -50%);
-  --offset: 20vw;
-  --move-initial: calc(-25% + var(--offset));
-  --move-final: calc(-50% + var(--offset));
-}
-.marquee__inner {
-  width: fit-content;
-  display: flex;
-  position: relative;
-  transform: translate3d(var(--move-initial), 0, 0);
-  animation: marquee 5s linear infinite;
-  animation-play-state: paused;
-  opacity: 0;
-  transition: opacity 0.1s;
-}
-.marquee span {
-  padding: 0 2vw;
-}
-
-.marquee__inner {
-  transition-duration: 0.4s;
-  animation-play-state: running;
-  opacity: 1;
-}
-
-@media screen and (min-width: 500px) {
-  .menu__item {
+  @include rwd(500) {
     min-height: 200px;
     font-size: 55px;
   }
-}
-
-@media screen and (min-width: 800px) {
-  .menu__item {
+  @include rwd(800) {
     min-height: 220px;
     font-size: 80px;
   }
-  .marquee span {
-    padding: 0 3.5vw;
+  @include rwd(1000) {
+    min-height: 220px;
+    font-size: 80px;
   }
-}
-@media screen and (min-width: 1000px) {
-  .menu__item {
-    min-height: 240px;
-    font-size: 100px;
-  }
-  .marquee span {
-    padding: 0 4vw;
-  }
-}
-@media screen and (min-width: 1400px) {
-  .menu__item {
+  @include rwd(1400) {
     min-height: 250px;
     font-size: 130px;
   }
-  .marquee span {
-    padding: 0 5vw;
-  }
-}
-@media screen and (min-width: 1700px) {
-  .menu__item {
+  @include rwd(1700) {
     min-height: 260px;
     font-size: 145px;
   }
-  .marquee span {
-    padding: 0 6vw;
+
+  &__item {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    --offset: 20vw;
+    --move-initial: calc(-25% + var(--offset));
+    --move-final: calc(-50% + var(--offset));
+
+    &__inner {
+      width: fit-content;
+      display: flex;
+      position: relative;
+      transform: translate3d(var(--move-initial), 0, 0);
+      animation: marquee 5s linear infinite;
+      transition: opacity 0.1s;
+      transition-duration: 0.4s;
+      animation-play-state: running;
+      opacity: 1;
+      span {
+        padding: 0 2vw;
+
+        @include rwd(800) {
+          padding: 0 3.5vw;
+        }
+        @include rwd(1000) {
+          padding: 0 4vw;
+        }
+        @include rwd(1400) {
+          padding: 0 5vw;
+        }
+        @include rwd(1700) {
+          padding: 0 6vw;
+        }
+      }
+    }
   }
 }
 

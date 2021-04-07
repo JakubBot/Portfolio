@@ -27,13 +27,11 @@ export default class LiquidImagesController {
          */
         this.images = document.querySelectorAll(this.DOM.image);
 
-        //PIXI stuff
         this.app = null;
 
     }
 
     init() {
-        // console.log("LiquidImagesController init()");
 
         if (this.images !== null) {
             this.liquidImages();
@@ -44,11 +42,9 @@ export default class LiquidImagesController {
 
     liquidImages() {
         for (let i = 0; i < this.images.length; i++) {
-            // CANVAS SIZE
             const canvasWidth = this.images[i].clientWidth;
             const canvasHeight = this.images[i].clientHeight;
 
-            // CREATE PIXI APPLICATION
             this.app = new PIXI.Application({
                 width: canvasWidth,
                 height: canvasHeight,
@@ -57,10 +53,8 @@ export default class LiquidImagesController {
                 resizeTo: this.images[i],
             });
 
-            // ADD CANVAS TO CANVAS WRAPPER ELEMENT
             this.images[i].appendChild(this.app.view);
 
-            //IMAGE
             const imageFile = this.images[i].getAttribute("data-image");
             const image = PIXI.Sprite.from(
                 imageFile,
@@ -77,7 +71,6 @@ export default class LiquidImagesController {
 
             this.app.stage.addChild(image);
 
-            // DISPLACEMENT MAP
             const displacementMapFile = this.images[i].getAttribute("data-displacement-map");
             const displacementMap = PIXI.Sprite.from(
                 displacementMapFile,
@@ -99,7 +92,6 @@ export default class LiquidImagesController {
             displacementMap.position.y = canvasHeight / 2;
             displacementMap.position.x = canvasWidth / 2;
 
-            // DISPLACE TIMELINE
             const displacementTimeline = gsap.timeline({
                 paused: true,
             });

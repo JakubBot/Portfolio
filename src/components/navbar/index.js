@@ -82,10 +82,10 @@ const Navbar = () => {
           </ion-icon>
         </div>
       </nav>
-      <main className="main">
-        <h1>Minimal Design</h1>
-        <h3>Jakub | Bot</h3>
-        <h4 className="hello">
+      <div className="container">
+        <header className="container__header">Minimal Design</header>
+        <header className="container__name">Jakub | Bot</header>
+        <h4 className="container__hello">
           <span>Hel</span>
           <span>lo</span>
         </h4>
@@ -118,15 +118,15 @@ const Navbar = () => {
         <ul className="menu js-portfolio">
           <div className="menu__informations">
             <div className="menu__links menu__scroller">
-              <ul>
-                <li className="js-portfolio-item">
+              <ul className="menu__links__list">
+                <li className="js-portfolio-item menu__links__list__item">
                   <a href="#content">
                     <span className="number">01. </span>
                     <span className="destination">Home /</span>
                     <span className="describe">intro</span>
                   </a>
                 </li>
-                <li className="js-portfolio-item">
+                <li className="js-portfolio-item menu__links__list__item">
                   <a href="#content">
                     <span className="number">02. </span>
                     <span className="destination">About me/</span>
@@ -134,14 +134,14 @@ const Navbar = () => {
                   </a>
                 </li>
 
-                <li className="js-portfolio-item">
+                <li className="js-portfolio-item menu__links__list__item">
                   <a href="#content">
                     <span className="number">03. </span>
                     <span className="destination">Portfolio /</span>
                     <span className="describe">my work</span>
                   </a>
                 </li>
-                <li className="js-portfolio-item">
+                <li className="js-portfolio-item menu__links__list__item">
                   <a href="#content">
                     <span className="number">04. </span>
                     <span className="destination">Contact /</span>
@@ -155,8 +155,8 @@ const Navbar = () => {
               </div>
             </div>
             <div className="menu__social-icons menu__links">
-              <ul>
-                <li>
+              <ul className="menu__links__list">
+                <li className="menu__links__list__item">
                   <a href="#a">
                     <ion-icon name="logo-facebook"></ion-icon>
                   </a>
@@ -210,7 +210,7 @@ const Navbar = () => {
             </ul>
           </div>
         </ul>
-      </main>
+      </div>
     </div>
   );
 };

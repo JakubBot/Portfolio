@@ -4,9 +4,9 @@ import './index.scss'
 
 const Marquee = () => {
   return (
-    <div className="menu__item">
     <div className="marquee">
-      <div className="marquee__inner" aria-hidden="true">
+    <div className="marquee__item">
+      <div className="marquee__item__inner" aria-hidden="true">
         <span>Style</span>
         <span>Style</span>
         <span>Style</span>

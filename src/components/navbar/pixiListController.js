@@ -69,7 +69,7 @@ export default class PortfolioListController {
   portfolioEvents() {
     for (let i = 0; i < this.portfolioItems.length; i++) {
       this.portfolioItems[i].addEventListener('mouseenter', () => {
-        this.portfolioItemMouseenter(i + 1); // why +1? Hint: PIXI related
+        this.portfolioItemMouseenter(i + 1); 
       });
 
       this.portfolioItems[i].addEventListener('mouseleave', () => {

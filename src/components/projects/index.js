@@ -4,7 +4,7 @@ import './index.scss';
 
 const Projects = () => {
   useEffect(() => {
-    import('./LiquidImagesController').then((Controller) => {
+    import('./pixiImagesController').then((Controller) => {
       let controller = new Controller.default();
       controller.init();
     });
