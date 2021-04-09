@@ -1,0 +1,36 @@
+
+%section__container {
+  padding: 5px 30px;
+  box-sizing: border-box;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+
+  @include sDesktop {
+    padding: 30px 30px;
+  }
+  @include desktop {
+    padding: 40px 30px;
+  }
+  @include lDesktop {
+    padding: 50px 30px;
+  }
+}
+
+%section__header {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 20px 0 50px;
+  color: #2f2f2f;
+
+  @include sDesktop {
+    font-size: 4.5em;
+    margin: 20px 0 90px;
+  }
+  @include desktop {
+    font-size: 5.5em;
+  }
+  @include lDesktop {
+    font-size: 6em;
+  }
+}

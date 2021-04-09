@@ -2,7 +2,7 @@ import * as PIXI from 'pixi.js';
 import { gsap } from 'gsap';
 
 export default class PortfolioListController {
-  constructor(navStatus) {
+  constructor() {
     /**
      * @type {{navigation: string, states: {navigationSlideUp: string, navigationScrolled: string, navigationFixed: string}}}
      */
@@ -14,7 +14,7 @@ export default class PortfolioListController {
       portfolioPreviewItem: '.js-portfolio-preview-item',
       portfolioCanvas: '.js-portfolio-canvas',
     };
-    this.navStatus = navStatus;
+    this.navStatus = false;
     /**
      *
      * @type {Element}

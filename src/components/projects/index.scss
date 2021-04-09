@@ -1,37 +1,24 @@
 @import '../../assets/styles/style.scss';
 
 .projects {
-  padding: 5px 30px;
-  box-sizing: border-box;
-  overflow: hidden;
-  max-width: 900px;
-  margin: 0 auto;
+  @extend %section__container;
+  // padding: 5px 30px;
+  // box-sizing: border-box;
+  // overflow: hidden;
+  // max-width: 900px;
+  // margin: 0 auto;
 
-  @include sDesktop {
-    padding: 30px 30px;
-  }
-  @include desktop {
-    padding: 40px 30px;
-  }
-  @include lDesktop {
-    padding: 50px 30px;
-  }
+  // @include sDesktop {
+  //   padding: 30px 30px;
+  // }
+  // @include desktop {
+  //   padding: 40px 30px;
+  // }
+  // @include lDesktop {
+  //   padding: 50px 30px;
+  // }
   &__header {
-    font-size: 2.5em;
-    font-weight: bold;
-    margin: 20px 0 50px;
-    color: #2f2f2f;
-
-    @include sDesktop {
-      font-size: 4.5em;
-      margin: 20px 0 90px;
-    }
-    @include desktop {
-      font-size: 5.5em;
-    }
-    @include lDesktop {
-      font-size: 6.5em;
-    }
+    @extend %section__header;
   }
 
   &__images {
@@ -45,6 +32,7 @@
       height: 60vh;
       min-height: 420px;
       background-color: rgba(0, 0, 0, 0.4);
+      position: relative;
 
       @include rwd(1200) {
         height: 100vh;
@@ -60,6 +48,15 @@
       font-size: 1.3em;
       font-weight: 600;
       color: #3f3f3f;
+    }
+    &__scroller {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      z-index: 1;
     }
   }
   &__images--right {

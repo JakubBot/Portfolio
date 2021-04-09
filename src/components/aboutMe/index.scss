@@ -1,0 +1,10 @@
+@import '../../assets/styles/style.scss';
+
+.about {
+  @extend %section__container;
+
+  &__header {
+    @extend %section__header;
+    text-align: right;
+  }
+}

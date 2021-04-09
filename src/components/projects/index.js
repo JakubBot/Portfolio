@@ -8,10 +8,10 @@ const Projects = () => {
       let controller = new Controller.default();
       controller.init();
     });
-  });
+  }, []);
   return (
     <>
-      <div className="projects">
+      <div className="projects" id="projects">
         <header className="projects__header">My Work</header>
 
         <div className="projects__images">
@@ -19,7 +19,10 @@ const Projects = () => {
             className="projects__images__image js-liquid-image"
             data-displacement-map={Images.DisplacementEffect}
             data-image={Images.Chess}
-          ></div>
+          >
+            <div className="projects__images__scroller"></div>
+          </div>
+
           <p className="projects__images__description">Chess app</p>
         </div>
         <div className="projects__images--right">

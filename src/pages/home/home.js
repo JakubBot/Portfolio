@@ -2,6 +2,7 @@ import React from 'react';
 import Marquee from '../../components/marquee';
 import Navbar from '../../components/navbar';
 import Projects from '../../components/projects';
+import AboutMe from '../../components/aboutMe';
 
 const Home = () => {
   return (
@@ -9,9 +10,7 @@ const Home = () => {
       <Navbar />
       <Marquee />
       <Projects />
-      <h1>ss</h1>
-      <h1>ss</h1>
-      <h1>Projects</h1>
+      <AboutMe />
     </>
   );
 };

@@ -35,15 +35,13 @@ const Navbar = () => {
         hamburger.current.setAttribute('aria-expanded', 'false');
       });
     });
-  }, []);
 
-  useEffect(() => {
     const ListController = import('./pixiListController.js');
     ListController.then((Controller) => {
-      controller = new Controller.default(navStatus);
+      controller = new Controller.default();
       controller.init();
     });
-  }, [navStatus]);
+  }, []);
 
   useEffect(() => {
     controller && controller.updateNavStatus(navStatus);
@@ -126,19 +124,19 @@ const Navbar = () => {
                     <span className="describe">intro</span>
                   </a>
                 </li>
+
                 <li className="js-portfolio-item menu__links__list__item">
-                  <a href="#content">
+                  <a href="#projects">
                     <span className="number">02. </span>
-                    <span className="destination">About me/</span>
-                    <span className="describe">history</span>
+                    <span className="destination">Portfolio /</span>
+                    <span className="describe">my work</span>
                   </a>
                 </li>
-
                 <li className="js-portfolio-item menu__links__list__item">
                   <a href="#content">
                     <span className="number">03. </span>
-                    <span className="destination">Portfolio /</span>
-                    <span className="describe">my work</span>
+                    <span className="destination">About me/</span>
+                    <span className="describe">history</span>
                   </a>
                 </li>
                 <li className="js-portfolio-item menu__links__list__item">

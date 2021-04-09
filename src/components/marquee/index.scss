@@ -6,27 +6,28 @@
   min-height: 160px;
   font-weight: bold;
   font-style: italic;
-  font-size: 40px;
+  font-size: 50px;
   color: #ccc;
+  opacity: 0.7;
   @include rwd(500) {
     min-height: 200px;
-    font-size: 55px;
+    font-size: 70px;
   }
   @include rwd(800) {
     min-height: 220px;
-    font-size: 80px;
+    font-size: 75px;
   }
   @include rwd(1000) {
     min-height: 220px;
-    font-size: 80px;
+    font-size: 85px;
   }
   @include rwd(1400) {
     min-height: 250px;
-    font-size: 130px;
+    font-size: 105px;
   }
   @include rwd(1700) {
     min-height: 260px;
-    font-size: 145px;
+    font-size: 125px;
   }
 
   &__item {
@@ -34,7 +35,7 @@
     top: 50%;
     left: 70%;
     transform: translate(-50%, -50%);
-    --offset: 20vw;
+    --offset: 25vw;
     --move-initial: calc(-25% + var(--offset));
     --move-final: calc(-50% + var(--offset));
 
