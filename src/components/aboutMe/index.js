@@ -48,11 +48,6 @@ const AboutMe = () => {
       <h1>s</h1>
       <h1>s</h1>
       <h1>s</h1>
-      <h1>s</h1>
-      <h1>s</h1>
-      <h1>s</h1>
-      <h1>s</h1>
-      <h1>s</h1>
     </div>
   );
 };
