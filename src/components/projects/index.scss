@@ -2,21 +2,7 @@
 
 .projects {
   @extend %section__container;
-  // padding: 5px 30px;
-  // box-sizing: border-box;
-  // overflow: hidden;
-  // max-width: 900px;
-  // margin: 0 auto;
 
-  // @include sDesktop {
-  //   padding: 30px 30px;
-  // }
-  // @include desktop {
-  //   padding: 40px 30px;
-  // }
-  // @include lDesktop {
-  //   padding: 50px 30px;
-  // }
   &__header {
     @extend %section__header;
   }

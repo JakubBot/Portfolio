@@ -1,19 +1,24 @@
-
 %section__container {
-  padding: 5px 30px;
+  padding: 5px 40px;
   box-sizing: border-box;
   overflow: hidden;
   max-width: 900px;
   margin: 0 auto;
 
+  @include phone {
+    padding: 5px 50px;
+  }
+  @include tablet {
+    padding: 20px 50px;
+  }
   @include sDesktop {
-    padding: 30px 30px;
+    padding: 30px 60px;
   }
   @include desktop {
-    padding: 40px 30px;
+    padding: 40px 50px;
   }
   @include lDesktop {
-    padding: 50px 30px;
+    padding: 50px 50px;
   }
 }
 
@@ -23,14 +28,21 @@
   margin: 20px 0 50px;
   color: #2f2f2f;
 
+  @include phone {
+    font-size: 3em;
+    margin: 40px 0 50px;
+  }
+  @include tablet {
+    font-size: 4em;
+  }
   @include sDesktop {
     font-size: 4.5em;
-    margin: 20px 0 90px;
+    margin: 10px 0 90px;
   }
   @include desktop {
-    font-size: 5.5em;
+    font-size: 5em;
   }
   @include lDesktop {
-    font-size: 6em;
+    font-size: 6.5em;
   }
 }

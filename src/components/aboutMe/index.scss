@@ -7,4 +7,24 @@
     @extend %section__header;
     text-align: right;
   }
+  &__description {
+    margin-top: 50px;
+    color: #cecece;
+    font-weight: bold;
+    font-size: 3em;
+
+    @include phone {
+      margin-top: 70px;
+    }
+    @include sDesktop {
+      margin-top: 100px;
+    }
+  }
+  h1 {
+    color: white;
+  }
+}
+
+.green {
+  color: #4f4f4f;
 }
