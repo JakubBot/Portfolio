@@ -29,25 +29,33 @@ const AboutMe = () => {
       '-=0.5'
     );
   }, []);
+
   return (
     <div className="about">
       <h3 className="about__header">About me</h3>
-      <p className="about__description">
-        My name is <span className="green">Jakub</span>
-      </p>
-      <h1>s</h1>
-      <h1>s</h1>
-      <h1>s</h1>
-      <h1>s</h1>
-      <h1>s</h1>
-      <h1>s</h1>
-      <h1>s</h1>
-      <h1>s</h1>
-      <h1>s</h1>
-      <h1>s</h1>
-      <h1>s</h1>
-      <h1>s</h1>
-      <h1>s</h1>
+      <div className="about__description">
+        <p>
+          My name is <span className="light-dark">Jakub.</span>
+        </p>
+        <p>
+          I <span className="light-dark">'am</span> young developer which{" "}
+          <span className="light-dark">love</span> animations
+        </p>
+        <p>
+          My journey started year ago when i realized that i like make websites
+          and animations
+        </p>
+        <p>
+          Currently for animations i use css keyframes, gsap, some framer motion
+          or react transition group. My full list of skills are{' '}
+          <span className="light-dark underline">here</span>
+        </p>
+        <p>
+          If you have any questions or cooperation offer, just{' '}
+          <span className="light-dark underline">email</span> me
+        </p>
+      </div>
+     
     </div>
   );
 };

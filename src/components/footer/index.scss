@@ -3,7 +3,10 @@
 .footer {
   color: white;
   overflow: hidden;
-
+  padding-bottom: 30px;
+  @include phone {
+    padding-bottom: 0;
+  }
   @include tablet {
     display: flex;
   }

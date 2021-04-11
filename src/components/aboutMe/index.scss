@@ -11,13 +11,28 @@
     margin-top: 50px;
     color: #cecece;
     font-weight: bold;
-    font-size: 3em;
-
+    font-size: 35px;
     @include phone {
       margin-top: 70px;
     }
+    @include tablet {
+      margin-top: 70px;
+      font-size: 40px;
+
+    }
     @include sDesktop {
+      font-size: 45px;
       margin-top: 100px;
+    }
+    @include lDesktop {
+      font-size: 60px;
+      margin-top: 100px;
+    }
+    & p:nth-child(1) {
+      font-size: 1.1em;
+    }
+    & p:not(p:nth-child(1)) {
+      font-size: 0.6em;
     }
   }
   h1 {
@@ -25,6 +40,11 @@
   }
 }
 
-.green {
-  color: #3f3f3f;
+.light-dark {
+  color: #4f4f4f;
+}
+
+.underline {
+  // text-decoration: underline;
+  border-bottom: 3px solid #4f4f4f;
 }
