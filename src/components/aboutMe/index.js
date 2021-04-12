@@ -28,6 +28,8 @@ const AboutMe = () => {
       },
       '-=0.5'
     );
+
+
   }, []);
 
   return (
@@ -38,7 +40,7 @@ const AboutMe = () => {
           My name is <span className="light-dark">Jakub.</span>
         </p>
         <p>
-          I <span className="light-dark">'am</span> young developer which{' '}
+          I <span className="light-dark">{"'"}am</span> young developer which{' '}
           <span className="light-dark">love</span> animations
         </p>
         <p>

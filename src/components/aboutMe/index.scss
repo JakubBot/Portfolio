@@ -34,17 +34,13 @@
       font-size: 0.6em;
     }
   }
-  h1 {
-    color: white;
-  }
 }
 
 .light-dark {
-  cursor: pointer;
   color: #4f4f4f;
 }
 
 .underline {
-  // text-decoration: underline;
+  cursor: pointer;
   border-bottom: 3px solid #4f4f4f;
 }

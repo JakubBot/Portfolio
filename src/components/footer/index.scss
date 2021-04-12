@@ -112,6 +112,7 @@
   }
 
   &__contact {
+    position: relative;
     flex: 1 1 auto;
     padding: 0px 30px 30px;
     font-size: 25px;
@@ -136,6 +137,22 @@
       @include lDesktop {
         font-size: 82px;
       }
+    }
+  }
+  &__circle {
+    margin-top: 10px;
+    cursor: pointer;
+    background: transparent;
+    font-size: 25px;
+    font-weight: bold;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
+    outline: none;
+    border: none;
+
+    @include phone {
+      font-size: 34px;
+      margin-top: 20px;
     }
   }
 }

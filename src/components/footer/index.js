@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Textinput from '../common/TextInput';
+import CircleType from 'circletype';
+import { gsap } from 'gsap';
 import './index.scss';
 
 const Footer = () => {
@@ -40,18 +42,24 @@ const Footer = () => {
       </div>
       <div className="footer__contact">
         <h3 className="footer__contact__header">Here</h3>
-        <Textinput
-          name="email"
-          value={contactForm.email}
-          onChange={handleChange}
-          labelText="email"
-        />
-        <Textinput
-          name="message"
-          value={contactForm.message}
-          onChange={handleChange}
-          labelText="message"
-        />
+        <form>
+          <Textinput
+            name="email"
+            value={contactForm.email}
+            onChange={handleChange}
+            labelText="email"
+          />
+          <Textinput
+            name="message"
+            value={contactForm.message}
+            onChange={handleChange}
+            labelText="message"
+          />
+          <button type="button" className="footer__circle">
+            <span>Send</span>
+          </button>
+        
+        </form>
       </div>
     </footer>
   );
