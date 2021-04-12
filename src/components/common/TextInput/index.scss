@@ -13,6 +13,7 @@
     color: #9f9f9f;
     padding-top: 12px;
     max-width: 500px;
+    font-size: .6em;
     @include phone {
       width: 60%;
     }
@@ -26,7 +27,8 @@
 
   &__header {
     color: #dfdfdf;
-    font-size: 1.2em;
+    font-size: .9em;
+
   }
   &__error {
     margin-top: 5px;

@@ -11,9 +11,9 @@ const AboutMe = () => {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: '.about',
-        start: 'top-=150 top',
-        end: '+=100',
-        scrub: 2,
+        start: 'top-=120 top',
+        end: '+=80',
+        scrub: 1,
         toggleActions: 'play none none reverse',
       },
     });
@@ -38,7 +38,7 @@ const AboutMe = () => {
           My name is <span className="light-dark">Jakub.</span>
         </p>
         <p>
-          I <span className="light-dark">'am</span> young developer which{" "}
+          I <span className="light-dark">'am</span> young developer which{' '}
           <span className="light-dark">love</span> animations
         </p>
         <p>
@@ -55,7 +55,6 @@ const AboutMe = () => {
           <span className="light-dark underline">email</span> me
         </p>
       </div>
-     
     </div>
   );
 };

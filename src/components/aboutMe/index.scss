@@ -18,7 +18,6 @@
     @include tablet {
       margin-top: 70px;
       font-size: 40px;
-
     }
     @include sDesktop {
       font-size: 45px;
@@ -41,6 +40,7 @@
 }
 
 .light-dark {
+  cursor: pointer;
   color: #4f4f4f;
 }
 
