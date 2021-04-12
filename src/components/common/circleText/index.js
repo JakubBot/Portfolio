@@ -3,19 +3,19 @@ import CircleType from 'circletype';
 import { gsap } from 'gsap';
 import './index.scss';
 
-const CircleText = () => {
+const CircleText = ({ text, id, left = true }) => {
   useEffect(() => {
-    new CircleType(document.querySelector('.circleText')).radius(80);
+    new CircleType(document.querySelector(`#${id}`)).radius(68);
     gsap.to('.circleText', {
       rotate: 360,
       duration: 8,
       ease: 'none',
       repeat: -1,
     });
-  }, []);
+  }, [id]);
   return (
-    <button type="button" className="circleText">
-      <span>Send & Here & Send & Here &</span>
+    <button type="button" id={id} className={`circleText ${!left && 'circleText__right'}`}>
+      <span>{text}</span>
     </button>
   );
 };
