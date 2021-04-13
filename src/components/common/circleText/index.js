@@ -6,15 +6,25 @@ import './index.scss';
 const CircleText = ({ text, id, left = true }) => {
   useEffect(() => {
     new CircleType(document.querySelector(`#${id}`)).radius(68);
-    gsap.to('.circleText', {
-      rotate: 360,
-      duration: 8,
-      ease: 'none',
-      repeat: -1,
-    });
+    gsap.fromTo(
+      '.circleText',
+      {
+        rotate: 0,
+      },
+      {
+        rotate: 360,
+        duration: 7,
+        ease: 'none',
+        repeat: -1,
+      }
+    );
   }, [id]);
   return (
-    <button type="button" id={id} className={`circleText ${!left && 'circleText__right'}`}>
+    <button
+      type="button"
+      id={id}
+      className={`circleText ${!left && 'circleText__right'}`}
+    >
       <span>{text}</span>
     </button>
   );
