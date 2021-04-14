@@ -68,7 +68,14 @@ const Navbar = () => {
     <div className="wrapper">
       <nav className="nav">
         <div className="nav__hamburger">
-          <ion-icon
+          <span
+            ref={hamburger}
+            onClick={hamburgerClick}
+            aria-expanded="false"
+            className="nav__hamburger__span icon-menu"
+            name="menu-outline"
+          ></span>
+          {/* <ion-icon
             ref={hamburger}
             onClick={hamburgerClick}
             aria-expanded="false"
@@ -77,7 +84,7 @@ const Navbar = () => {
             name="menu-outline"
           >
             A
-          </ion-icon>
+          </ion-icon> */}
         </div>
       </nav>
       <div className="container">
@@ -156,17 +163,20 @@ const Navbar = () => {
               <ul className="menu__links__list">
                 <li className="menu__links__list__item">
                   <a href="#a">
-                    <ion-icon name="logo-facebook"></ion-icon>
+                    {/* <ion-icon name="logo-facebook"></ion-icon> */}
+                    <span className="icon-github-circled icon-dark" />
                   </a>
                 </li>
-                <li>
+                <li className="menu__links__list__item">
                   <a href="#a">
-                    <ion-icon name="logo-instagram"></ion-icon>
+                    {/* <ion-icon name="logo-instagram"></ion-icon> */}
+                    <span className="icon-mail-alt icon-dark" />
                   </a>
                 </li>
-                <li>
+                <li className="menu__links__list__item">
                   <a href="#a">
-                    <ion-icon name="logo-twitter"></ion-icon>
+                    {/* <ion-icon name="logo-twitter"></ion-icon> */}
+                    <span className="icon-facebook-squared icon-dark" />
                   </a>
                 </li>
               </ul>
