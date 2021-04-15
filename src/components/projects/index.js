@@ -21,7 +21,13 @@ const Projects = () => {
             data-displacement-map={Images.DisplacementEffect}
             data-image={Images.Chess}
           >
-            <div className="projects__images__scroller"></div>
+            <a
+              href="https://jakubbot.github.io/Chess-Game/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="projects__images__scroller"></div>
+            </a>
           </div>
 
           <p className="projects__images__description">Chess app</p>
@@ -36,7 +42,13 @@ const Projects = () => {
             data-displacement-map={Images.DisplacementEffect}
             data-image={Images.OnlineShop}
           >
-            <div className="projects__images__scroller"></div>
+            <a
+              href="https://jakubbot.github.io/sklep-vanilla-js/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="projects__images__scroller"></div>
+            </a>
           </div>
           <p className="projects__images__description">Shop app</p>
           <CircleText
@@ -51,7 +63,13 @@ const Projects = () => {
             data-displacement-map={Images.DisplacementEffect}
             data-image={Images.Portfolio}
           >
-            <div className="projects__images__scroller"></div>
+            <a
+              href="https://jakubbot.github.io/Portfolio/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="projects__images__scroller"></div>
+            </a>
           </div>
           <p className="projects__images__description">Portfolio</p>
           <CircleText

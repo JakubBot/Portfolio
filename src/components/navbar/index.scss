@@ -34,7 +34,9 @@ body.noscroll {
     @include rwd(600) {
       padding-top: 120px;
     }
-
+    @include sDesktop {
+      font-size: 3.5em;
+    }
     &__span {
       cursor: pointer;
       color: rgba(0, 0, 0, 0.7);

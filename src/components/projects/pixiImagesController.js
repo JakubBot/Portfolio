@@ -78,8 +78,6 @@ export default class LiquidImagesController {
       this.app.stage.filterArea = this.app.screen;
       this.app.stage.filters = [displacementFilter];
       this.app.stage.addChild(displacementMap);
-      //
-      this.app.view.style.touchAction = 'pan-y';
       displacementMap.name = displacementMapFile;
       displacementMap.width = canvasWidth;
       displacementMap.height = canvasHeight;
