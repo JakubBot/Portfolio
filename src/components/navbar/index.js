@@ -21,7 +21,7 @@ const Navbar = () => {
 
     links.forEach((link) => {
       link.addEventListener('click', (e) => {
-        e.preventDefault()
+        e.preventDefault();
         setNavStatus(false);
 
         let scrollTarget = link.getAttribute('href');
@@ -163,20 +163,29 @@ const Navbar = () => {
             <div className="menu__social-icons menu__links">
               <ul className="menu__links__list">
                 <li className="menu__links__list__item">
-                  <a href="#a">
-                    {/* <ion-icon name="logo-facebook"></ion-icon> */}
+                  <a
+                    href="https://github.com/JakubBot"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <span className="icon-github-circled icon-dark" />
                   </a>
                 </li>
                 <li className="menu__links__list__item">
-                  <a href="#a">
-                    {/* <ion-icon name="logo-instagram"></ion-icon> */}
+                  <a
+                    href="https://www.google.com/intl/pl/gmail/about/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <span className="icon-mail-alt icon-dark" />
                   </a>
                 </li>
                 <li className="menu__links__list__item">
-                  <a href="#a">
-                    {/* <ion-icon name="logo-twitter"></ion-icon> */}
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100009801185275"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <span className="icon-facebook-squared icon-dark" />
                   </a>
                 </li>
@@ -201,19 +210,16 @@ const Navbar = () => {
 
               <li
                 className="menu__images__item js-portfolio-preview-item"
-                // data-portfolio-preview="static/images/work-03.jpg"
                 data-portfolio-preview={Images.Work3}
               ></li>
 
               <li
                 className="menu__images__item js-portfolio-preview-item"
-                // data-portfolio-preview="static/images/work-04.jpg"
                 data-portfolio-preview={Images.Work4}
               ></li>
 
               <li
                 className="menu__images__item js-portfolio-preview-item"
-                // data-portfolio-preview="static/images/work-05.jpg"
                 data-portfolio-preview={Images.Work5}
               ></li>
             </ul>
