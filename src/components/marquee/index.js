@@ -1,19 +1,19 @@
-import React from 'react';
+import React from "react";
 
-import './index.scss'
+import "./index.scss";
 
 const Marquee = () => {
   return (
     <div className="marquee">
-    <div className="marquee__item">
-      <div className="marquee__item__inner" aria-hidden="true">
-        <span>Style</span>
-        <span>Style</span>
-        <span>Style</span>
-        <span>Style</span>
+      <div className="marquee__item">
+        <div className="marquee__item__inner" aria-hidden="true">
+          <span>Style</span>
+          <span>Style</span>
+          <span>Style</span>
+          <span>Style</span>
+        </div>
       </div>
     </div>
-  </div>
   );
 };
 

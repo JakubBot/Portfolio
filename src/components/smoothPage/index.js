@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import { gsap } from 'gsap';
+import React, { useEffect } from "react";
+import { gsap } from "gsap";
 
-import './index.scss';
+import "./index.scss";
 
 const SmoothPage = ({ children }) => {
   useEffect(() => {
@@ -10,7 +10,7 @@ const SmoothPage = ({ children }) => {
     var body = document.body;
 
     var scroller = {
-      target: document.querySelector('#scroll-container'),
+      target: document.querySelector("#scroll-container"),
       ease: 0.05,
       endY: 0,
       y: 0,
@@ -25,13 +25,13 @@ const SmoothPage = ({ children }) => {
       force3D: true,
     });
 
-    window.addEventListener('load', onLoad);
+    window.addEventListener("load", onLoad);
 
     function onLoad() {
       updateScroller();
       window.focus();
-      window.addEventListener('resize', onResize);
-      document.addEventListener('scroll', onScroll);
+      window.addEventListener("resize", onResize);
+      document.addEventListener("scroll", onScroll);
     }
 
     function updateScroller() {
@@ -39,7 +39,7 @@ const SmoothPage = ({ children }) => {
 
       if (resized) {
         var height = scroller.target.clientHeight;
-        body.style.height = height + 'px';
+        body.style.height = height + "px";
         scroller.resizeRequest = 0;
       }
 
@@ -86,9 +86,7 @@ const SmoothPage = ({ children }) => {
           </div>
         </div>
       ) : (
-        <>
-          {children}
-        </>
+        <>{children}</>
       )}
     </>
   );

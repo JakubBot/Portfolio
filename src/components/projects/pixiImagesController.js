@@ -136,7 +136,7 @@ export default class LiquidImagesController {
         );
 
       if (this.options.bindTimelineToScroll === true) {
-        const scrollScene = new ScrollScene({
+        new ScrollScene({
           triggerElement: this.images[i],
           triggerHook: 1,
           duration: '100%',
@@ -145,7 +145,7 @@ export default class LiquidImagesController {
           },
         });
       } else {
-        const scrollScene = new ScrollScene({
+        new ScrollScene({
           triggerElement: this.images[i],
           triggerHook: 0.8,
           gsap: {

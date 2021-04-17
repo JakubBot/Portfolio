@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { gsap } from 'gsap';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-import timeLine from './gsapAnimations';
-import Images from './images';
+import React, { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import timeLine from "./gsapAnimations";
+import Images from "./images";
 
-import './index.scss';
+import "./index.scss";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -15,29 +15,29 @@ const Navbar = () => {
   const [navStatus, setNavStatus] = useState(false);
 
   useEffect(() => {
-    const links = document.querySelectorAll('.menu__scroller ul li a');
-    const body = document.querySelector('body');
+    const links = document.querySelectorAll(".menu__scroller ul li a");
+    const body = document.querySelector("body");
     tl = timeLine(body);
 
     links.forEach((link) => {
-      link.addEventListener('click', (e) => {
+      link.addEventListener("click", (e) => {
         e.preventDefault();
         setNavStatus(false);
 
-        let scrollTarget = link.getAttribute('href');
+        let scrollTarget = link.getAttribute("href");
 
         tl.reverse().then(() => {
           gsap.to(window, {
             duration: 2.2,
             scrollTo: scrollTarget,
-            ease: 'expo.inOut',
+            ease: "expo.inOut",
           });
         });
-        hamburger.current.setAttribute('aria-expanded', 'false');
+        hamburger.current.setAttribute("aria-expanded", "false");
       });
     });
 
-    const ListController = import('./pixiListController.js');
+    const ListController = import("./pixiListController.js");
     ListController.then((Controller) => {
       controller = new Controller.default();
       controller.init();
@@ -49,19 +49,19 @@ const Navbar = () => {
   }, [navStatus]);
 
   const hamburgerClick = (e) => {
-    if (e.target.getAttribute('aria-expanded') === 'false') {
+    if (e.target.getAttribute("aria-expanded") === "false") {
       setNavStatus(true);
       gsap.to(window, { duration: 0.5, scrollTo: 0 }).then(() => {
         tl.play();
       });
 
-      e.target.setAttribute('aria-expanded', 'true');
+      e.target.setAttribute("aria-expanded", "true");
     } else {
       setNavStatus(false);
 
       tl.reverse();
 
-      e.target.setAttribute('aria-expanded', 'false');
+      e.target.setAttribute("aria-expanded", "false");
     }
   };
 

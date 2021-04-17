@@ -1,5 +1,5 @@
-import * as PIXI from 'pixi.js';
-import { gsap } from 'gsap';
+import * as PIXI from "pixi.js";
+import { gsap } from "gsap";
 
 export default class PortfolioListController {
   constructor() {
@@ -8,11 +8,11 @@ export default class PortfolioListController {
      */
 
     this.DOM = {
-      portfolio: '.js-portfolio',
-      portfolioItem: '.js-portfolio-item',
-      portfolioPreviewList: '.js-portfolio-preview-list',
-      portfolioPreviewItem: '.js-portfolio-preview-item',
-      portfolioCanvas: '.js-portfolio-canvas',
+      portfolio: ".js-portfolio",
+      portfolioItem: ".js-portfolio-item",
+      portfolioPreviewList: ".js-portfolio-preview-list",
+      portfolioPreviewItem: ".js-portfolio-preview-item",
+      portfolioCanvas: ".js-portfolio-canvas",
     };
     this.navStatus = false;
     /**
@@ -68,18 +68,18 @@ export default class PortfolioListController {
 
   portfolioEvents() {
     for (let i = 0; i < this.portfolioItems.length; i++) {
-      this.portfolioItems[i].addEventListener('mouseenter', () => {
-        this.portfolioItemMouseenter(i + 1); 
+      this.portfolioItems[i].addEventListener("mouseenter", () => {
+        this.portfolioItemMouseenter(i + 1);
       });
 
-      this.portfolioItems[i].addEventListener('mouseleave', () => {
+      this.portfolioItems[i].addEventListener("mouseleave", () => {
         this.portfolioItemMouseleave();
       });
     }
   }
 
   portfolioController() {
-    const imageContainer = document.querySelector('.menu__images__canvas');
+    const imageContainer = document.querySelector(".menu__images__canvas");
     let canvasContainer = imageContainer.getBoundingClientRect();
     const canvasWidth = window.innerWidth - canvasContainer.x;
 
@@ -95,7 +95,7 @@ export default class PortfolioListController {
     this.portfolioCanvas.appendChild(this.app.view);
 
     const displacementMapFile = this.portfolioCanvas.getAttribute(
-      'data-displacement-map'
+      "data-displacement-map"
     );
 
     const displacementMap = new PIXI.Sprite.from(displacementMapFile);
@@ -118,7 +118,7 @@ export default class PortfolioListController {
 
     for (let i = 0; i < this.portfolioItems.length; i++) {
       const imageFile = this.portfolioPreviewItems[i].getAttribute(
-        'data-portfolio-preview'
+        "data-portfolio-preview"
       );
 
       const texture = new PIXI.Texture.from(imageFile);
@@ -137,10 +137,10 @@ export default class PortfolioListController {
       paused: true,
     });
 
-    const canvasElement = this.portfolioCanvas.querySelector('canvas');
+    const canvasElement = this.portfolioCanvas.querySelector("canvas");
 
     this.displacementTimeline
-      .add('start')
+      .add("start")
       .fromTo(
         canvasElement,
         {
@@ -149,9 +149,9 @@ export default class PortfolioListController {
         {
           duration: 0.4,
           autoAlpha: 1,
-          ease: 'power3.out',
+          ease: "power3.out",
         },
-        'start'
+        "start"
       )
       .fromTo(
         canvasElement,
@@ -161,9 +161,9 @@ export default class PortfolioListController {
         {
           duration: 0.8,
           scale: 1,
-          ease: 'power3.out',
+          ease: "power3.out",
         },
-        'start'
+        "start"
       )
       .fromTo(
         displacementFilter.scale,
@@ -175,10 +175,10 @@ export default class PortfolioListController {
           duration: 1.6,
           x: 0,
           y: 0,
-          ease: 'power3.out',
+          ease: "power3.out",
           onComplete: () => {},
         },
-        'start'
+        "start"
       );
   }
 
@@ -187,7 +187,7 @@ export default class PortfolioListController {
       gsap.to(this.app.stage.children[index], {
         duration: 0.6,
         alpha: 1,
-        ease: 'power3.out',
+        ease: "power3.out",
         onStart: () => {
           this.displacementTimeline.restart().pause();
           this.displacementTimeline.play();
@@ -200,7 +200,7 @@ export default class PortfolioListController {
     gsap.to(this.app.stage.children, {
       duration: 0.4,
       alpha: 0,
-      ease: 'power3.out',
+      ease: "power3.out",
     });
   }
 }

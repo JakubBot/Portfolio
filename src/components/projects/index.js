@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
-import Images from './images';
-import CircleText from '../common/CircleText';
-import './index.scss';
+import React, { useEffect } from "react";
+import Images from "./images";
+import CircleText from "../common/CircleText";
+import "./index.scss";
 
 const Projects = () => {
   useEffect(() => {
-    import('./pixiImagesController').then((Controller) => {
+    import("./pixiImagesController").then((Controller) => {
       let controller = new Controller.default();
       controller.init();
     });
