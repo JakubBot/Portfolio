@@ -20,7 +20,8 @@ const Navbar = () => {
     tl = timeLine(body);
 
     links.forEach((link) => {
-      link.addEventListener('click', () => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault()
         setNavStatus(false);
 
         let scrollTarget = link.getAttribute('href');
@@ -140,14 +141,14 @@ const Navbar = () => {
                   </a>
                 </li>
                 <li className="js-portfolio-item menu__links__list__item">
-                  <a href="#content">
+                  <a href="#about">
                     <span className="number">03. </span>
                     <span className="destination">About me/</span>
                     <span className="describe">history</span>
                   </a>
                 </li>
                 <li className="js-portfolio-item menu__links__list__item">
-                  <a href="#content">
+                  <a href="#footer">
                     <span className="number">04. </span>
                     <span className="destination">Contact /</span>
                     <span className="describe">say hello</span>

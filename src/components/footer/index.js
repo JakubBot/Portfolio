@@ -80,7 +80,7 @@ const Footer = () => {
       );
   };
   return (
-    <footer className="footer">
+    <footer className="footer" id="footer">
       <div className="footer__perspective">
         <div className="footer__perspective__line">
           <p></p>
@@ -92,15 +92,39 @@ const Footer = () => {
         </div>
         <div className="footer__perspective__line">
           <p>Facebook</p>
-          <p>KubaBot</p>
+          <p>
+            <a
+              href="https://www.facebook.com/profile.php?id=100009801185275"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              KubaBot
+            </a>
+          </p>
         </div>
         <div className="footer__perspective__line small-font">
           <p>Email</p>
-          <p>bkuba1401@gmail.com</p>
+          <p>
+            <a
+              href="https://www.google.com/intl/pl/gmail/about/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              bkuba1401@gmail.com
+            </a>
+          </p>
         </div>
         <div className="footer__perspective__line">
           <p>Github</p>
-          <p>JakubBot</p>
+          <p>
+            <a
+              href="https://github.com/JakubBot"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              JakubBot
+            </a>
+          </p>
         </div>
       </div>
       <div className="footer__contact">

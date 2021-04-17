@@ -75,6 +75,10 @@
         height: 42px;
         line-height: 50px;
         transition: all 0.5s ease-in-out;
+
+        a {
+          color: inherit;
+        }
         @include phone {
           height: 45px;
           line-height: 45px;
