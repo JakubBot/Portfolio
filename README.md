@@ -1,6 +1,6 @@
 # Online Version
 
-- [https://jakubbot.github.io/Chess-Game](https://jakubbot.github.io/Portfolio/)
+- [https://jakubbot.github.io/Portfolio](https://jakubbot.github.io/Portfolio/)
 
 ## About Me
 
