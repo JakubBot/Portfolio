@@ -33,6 +33,10 @@
     & p:not(p:nth-child(1)) {
       font-size: 0.6em;
     }
+
+    a {
+      text-decoration: none;
+    }
   }
 }
 

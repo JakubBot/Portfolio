@@ -48,11 +48,19 @@ const AboutMe = () => {
         <p>
           Currently for animations i use css keyframes, gsap, some framer motion
           or react transition group. My full list of skills are{" "}
-          <span className="light-dark underline">here</span>
+          <a
+            href="https://github.com/JakubBot/Portfolio"
+            className="light-dark underline"
+          >
+            here
+          </a>
         </p>
         <p>
           If you have any questions or cooperation offer, just{" "}
-          <span className="light-dark underline">email</span> me
+          <a href="mailto:bkuba1401@gmail.com" className="light-dark underline">
+            email
+          </a>{" "}
+          me
         </p>
       </div>
     </div>

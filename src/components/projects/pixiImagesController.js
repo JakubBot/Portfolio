@@ -1,6 +1,6 @@
-import * as PIXI from 'pixi.js';
-import gsap from 'gsap';
-import { ScrollScene } from 'scrollscene';
+import * as PIXI from "pixi.js";
+import gsap from "gsap";
+import { ScrollScene } from "scrollscene";
 
 window.PIXI = PIXI;
 
@@ -14,7 +14,7 @@ export default class LiquidImagesController {
      * @type {{imageContainer: string}}
      */
     this.DOM = {
-      image: '.js-liquid-image',
+      image: ".js-liquid-image",
     };
 
     this.options = {
@@ -53,7 +53,7 @@ export default class LiquidImagesController {
 
       this.images[i].appendChild(this.app.view);
 
-      const imageFile = this.images[i].getAttribute('data-image');
+      const imageFile = this.images[i].getAttribute("data-image");
       const image = PIXI.Sprite.from(imageFile);
 
       image.name = imageFile;
@@ -68,7 +68,7 @@ export default class LiquidImagesController {
       this.app.stage.addChild(image);
 
       const displacementMapFile = this.images[i].getAttribute(
-        'data-displacement-map'
+        "data-displacement-map"
       );
       const displacementMap = PIXI.Sprite.from(displacementMapFile);
       const displacementFilter = new PIXI.filters.DisplacementFilter(
@@ -91,10 +91,10 @@ export default class LiquidImagesController {
         paused: true,
       });
 
-      const canvasElement = this.images[i].querySelector('canvas');
+      const canvasElement = this.images[i].querySelector("canvas");
 
       displacementTimeline
-        .add('start')
+        .add("start")
         .fromTo(
           canvasElement,
           {
@@ -103,9 +103,9 @@ export default class LiquidImagesController {
           {
             duration: 0.4,
             autoAlpha: 1,
-            ease: 'power3.out',
+            ease: "power3.out",
           },
-          'start'
+          "start"
         )
         .fromTo(
           canvasElement,
@@ -115,9 +115,9 @@ export default class LiquidImagesController {
           {
             duration: 1,
             scale: 1,
-            ease: 'power3.out',
+            ease: "power3.out",
           },
-          'start'
+          "start"
         )
         .fromTo(
           displacementFilter.scale,
@@ -129,17 +129,17 @@ export default class LiquidImagesController {
             duration: 1.6,
             x: 0,
             y: 0,
-            ease: 'power3.out',
+            ease: "power3.out",
             onComplete: () => {},
           },
-          'start'
+          "start"
         );
 
       if (this.options.bindTimelineToScroll === true) {
         new ScrollScene({
           triggerElement: this.images[i],
           triggerHook: 1,
-          duration: '100%',
+          duration: "100%",
           gsap: {
             timeline: displacementTimeline,
           },
