@@ -2,8 +2,8 @@
 
 .circleText {
   position: absolute;
-  right: 15%;
-  top: 15%;
+  right: 0%;
+  top: 10%;
   background: transparent;
   font-size: 18px;
   font-weight: bold;
@@ -11,12 +11,24 @@
   -webkit-text-stroke: 1px rgba(0, 0, 0, 1);
   outline: none;
   border: none;
+  z-index: 10;
 
   @include phone {
     font-size: 20px;
-
+  }
+  @include tablet {
+    right: -10%;
   }
   &__right {
-    left: 15%;
+    left: 0%;
+    right: unset;
+
+    @include phone {
+      font-size: 20px;
+    }
+
+    @include tablet {
+      left: -10%;
+    }
   }
 }

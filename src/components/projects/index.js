@@ -18,24 +18,29 @@ const Projects = () => {
         <ProjectImages
           dataDisplacementMap={Images.DisplacementEffect}
           dataImage={Images.Chess}
-          link="https://jakubbot.github.io/Chess-Game/"
+          link="https://jakubbot.github.io/Chess-Game"
           id="firstText"
           text="Design & Design & Design & Design &"
+          name="Chess App"
+
         />
         <ProjectImages
           dataDisplacementMap={Images.DisplacementEffect}
           dataImage={Images.OnlineShop}
-          link="https://jakubbot.github.io/sklep-vanilla-js/"
+          link="https://shopify-rouge.vercel.app"
           text="Smooth & Smooth & Smooth & Smooth &"
           id="secondText"
           right={true}
+          name="Shop App"
+
         />
         <ProjectImages
           dataDisplacementMap={Images.DisplacementEffect}
           dataImage={Images.Portfolio}
-          link="https://jakubbot.github.io/Portfolio/"
+          link="https://jakubbot.github.io/SphereAnimationThreeJs"
           text="Creativity & Creativity & Creativity & "
           id="thirdText"
+          name="Three.js animations"
         />
       </div>
     </>

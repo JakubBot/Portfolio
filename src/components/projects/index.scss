@@ -30,15 +30,11 @@
         height: 100%;
       }
     }
-    &__description {
-
-      a {
-        font-size: 1.3em;
-        font-weight: 600;
-        color: #3f3f3f;
-        text-decoration: none;
-      }
-    
+    &__description a {
+      font-size: 1.3em;
+      font-weight: 600;
+      color: #3f3f3f;
+      text-decoration: none;
     }
     &__scroller {
       position: absolute;
