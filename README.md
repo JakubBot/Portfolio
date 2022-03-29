@@ -13,14 +13,17 @@ Hi, I'am Jakub, beginner in frontend development. My journey started 2 years ago
 - [typing.js](https://github.com/JakubBot/typing.js) - small js library for typing animation
 
 ## Skills 
-- html,css,javascript
 - git,github
 - react
 - react transition group, gsap, keyframes
+- three.js and glsl
 - webpack, npm
 - firebase
+- next.js
+- mongoDb
+- testing library react
+
 
 ## Learning goals
 - typescript
-- Next.js
-- Node.js
+- security
