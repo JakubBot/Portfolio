@@ -10,7 +10,7 @@ Hi, I'am Jakub, beginner in frontend development. My journey started 2 years ago
 ## Projects 
 - [Chess Game](https://github.com/JakubBot/Chess-Game) - it's great chess app where you can play either computer or online, with login and points
 - [Shop App](https://github.com/JakubBot/sklep-vanilla-js) - app for order a food
-- [typing.js](https://github.com/JakubBot/typing.js) - small js library for typing animation
+- [Sphere Animation](https://jakubbot.github.io/SphereAnimationThreeJs) - Animation of Sphere
 
 ## Skills 
 - git,github
