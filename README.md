@@ -9,10 +9,10 @@ Hi, I'am Jakub, beginner in frontend development. My journey started 2 years ago
 
 ## Projects 
 - [Chess Game](https://github.com/JakubBot/Chess-Game) - it's great chess app where you can play either computer or online, with login and points
-- [Shop App](https://github.com/JakubBot/sklep-vanilla-js) - app for order a food
-- [Sphere Animation](https://jakubbot.github.io/SphereAnimationThreeJs) - Animation of Sphere
+- [Shop App](https://github.com/JakubBot/Shopify) - app for ordering a food
+- [Sphere Animation](https://github.com/JakubBot/SphereAnimationThreeJs) - Animation of Sphere
 
-## Skills 
+## Technologies 
 - git,github
 - react
 - react transition group, gsap, keyframes
@@ -24,6 +24,5 @@ Hi, I'am Jakub, beginner in frontend development. My journey started 2 years ago
 - testing library react
 
 
-## Learning goals
-- typescript
-- security
+## Future goals
+- application security
