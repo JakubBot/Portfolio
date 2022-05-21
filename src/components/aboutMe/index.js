@@ -42,12 +42,12 @@ const AboutMe = () => {
           <span className="light-dark">love</span> animations
         </p>
         <p>
-          My journey started year ago when i realized that i like make websites
+          My journey started year ago when i realized that i like creating websites
           and animations
         </p>
         <p>
-          Currently for animations i use css keyframes, gsap, some framer motion
-          or react transition group. My full list of skills are{" "}
+          Currently, I use css keyframes, gsap, framer motion
+           react transition group and three.js. My full list of skills are{" "}
           <a
             href="https://github.com/JakubBot/Portfolio"
             className="light-dark underline"
