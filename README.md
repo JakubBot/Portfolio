@@ -3,8 +3,9 @@
 - [https://jakubbot.github.io/Portfolio](https://jakubbot.github.io/Portfolio/)
 
 ## About Me
+Hi, I'am Jakub, I am a 4th-semester Computer Science student at the Gdańsk University of Technology with 2 years of commercial experience in Web Development.
 
-Hi, I'am Jakub, beginner in frontend development. My journey started 2 years ago with C++. After couple of months i switch into javascript and here I am. I am currently working on my animation skills as well as react. 
+
 
 
 ## Projects 
@@ -14,15 +15,14 @@ Hi, I'am Jakub, beginner in frontend development. My journey started 2 years ago
 
 ## Technologies 
 - git,github
-- react
-- react transition group, gsap, keyframes
-- three.js and glsl
+- JavaScript, TypeScript 
+- react, next.js, react transition group, gsap
 - webpack, npm
 - firebase
-- next.js
+- Redux, XState
 - mongoDb
-- testing library react
-
+- Aws-amplify, GraphQl
+- Airtable
 
 ## Future goals
 - application security
