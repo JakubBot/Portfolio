@@ -11,7 +11,7 @@ const AboutMe = () => {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".about",
-        start: "top-=120 top",
+        start: "top-=280 top",
         end: "+=80",
         scrub: 1,
         toggleActions: "play none none reverse",

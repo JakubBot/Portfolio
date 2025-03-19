@@ -1,5 +1,6 @@
 import DisplacementEffect from "../../assets/images/displacement-liquid.png";
-import Aeropage from "../../assets/images/aeropage2.png";
+//import Aeropage from "../../assets/images/aeropage.png";
+import Aeropage from "../../assets/images/aeropage_small.png";
 
 export default {
   Aeropage,

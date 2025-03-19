@@ -7,14 +7,14 @@ const Work = () => {
   return (
     <>
       <div className="work" id="work">
-        <header className="work__header">Experience</header>
+        <header className="work__header">Work</header>
 
         <ProjectImages
           dataDisplacementMap={Images.DisplacementEffect}
           dataImage={Images.Aeropage}
           link="https://builder.aeropage.io/"
           id="aeropage"
-          text="Aeropage & Aeropage & Aeropage & "
+          text={null}
           name="Aeropage.io"
         />
 
