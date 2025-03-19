@@ -137,7 +137,7 @@ const Navbar = () => {
                   <a href="#projects">
                     <span className="number">02. </span>
                     <span className="destination">Portfolio /</span>
-                    <span className="describe">my work</span>
+                    <span className="describe">my projects</span>
                   </a>
                 </li>
                 <li className="js-portfolio-item menu__links__list__item">

@@ -13,7 +13,7 @@ const Projects = () => {
   return (
     <>
       <div className="projects" id="projects">
-        <header className="projects__header">My Work</header>
+        <header className="projects__header">My Projects</header>
 
         <ProjectImages
           dataDisplacementMap={Images.DisplacementEffect}

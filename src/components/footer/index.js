@@ -128,7 +128,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer__contact">
-        <h3 className="footer__contact__header">Here</h3>
+        <h3 className="footer__contact__header">Contact Me</h3>
         <form onSubmit={sendEmail}>
           <Textinput
             name="name"

@@ -88,11 +88,7 @@ body.noscroll {
     color: #fff;
     margin: 0;
     letter-spacing: 1px;
-    display: none;
-
-    @include phone {
-      display: initial;
-    }
+   
     @include sDesktop {
       font-size: 50px;
     }
