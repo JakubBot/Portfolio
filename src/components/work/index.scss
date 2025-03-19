@@ -1,0 +1,27 @@
+@import '../../assets/styles/style.scss';
+
+.work {
+  @extend %section__container;
+
+  &__header {
+    @extend %section__header;
+  }
+
+  &__description,
+  &__list {
+    font-size: clamp(11px, 2vw, 16px);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+    margin-bottom: 0;
+
+    @include tablet {
+      gap: 10px;
+      margin-top: 20px;
+    }
+  }
+}

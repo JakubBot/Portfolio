@@ -1,15 +1,11 @@
 import React, { useEffect } from "react";
 import Images from "./images";
-import ProjectImages from "./projectImages";
+import ProjectImages from "../common/projectImages";
 import "./index.scss";
 
 const Projects = () => {
-  useEffect(() => {
-    import("./pixiImagesController").then((Controller) => {
-      let controller = new Controller.default();
-      controller.init();
-    });
-  }, []);
+
+
   return (
     <>
       <div className="projects" id="projects">

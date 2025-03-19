@@ -1,6 +1,7 @@
 import React from 'react';
-import CircleText from '../common/CircleText';
+import CircleText from '../CircleText';
 import './index.scss';
+
 const ProjectImages = ({
   right = false,
   dataDisplacementMap,

@@ -76,16 +76,6 @@ const Navbar = () => {
             className="nav__hamburger__span icon-menu"
             name="menu-outline"
           ></span>
-          {/* <ion-icon
-            ref={hamburger}
-            onClick={hamburgerClick}
-            aria-expanded="false"
-            className="hamburger"
-            style={{ fontSize: '3em' }}
-            name="menu-outline"
-          >
-            A
-          </ion-icon> */}
         </div>
       </nav>
       <div className="container">
@@ -134,22 +124,29 @@ const Navbar = () => {
                 </li>
 
                 <li className="js-portfolio-item menu__links__list__item">
-                  <a href="#projects">
+                  <a href="#work">
                     <span className="number">02. </span>
+                    <span className="destination">Work /</span>
+                    <span className="describe">experience</span>
+                  </a>
+                </li>
+                <li className="js-portfolio-item menu__links__list__item">
+                  <a href="#projects">
+                    <span className="number">03. </span>
                     <span className="destination">Portfolio /</span>
                     <span className="describe">my projects</span>
                   </a>
                 </li>
                 <li className="js-portfolio-item menu__links__list__item">
                   <a href="#about">
-                    <span className="number">03. </span>
+                    <span className="number">04. </span>
                     <span className="destination">About me/</span>
                     <span className="describe">history</span>
                   </a>
                 </li>
                 <li className="js-portfolio-item menu__links__list__item">
                   <a href="#footer">
-                    <span className="number">04. </span>
+                    <span className="number">05. </span>
                     <span className="destination">Contact /</span>
                     <span className="describe">say hello</span>
                   </a>
