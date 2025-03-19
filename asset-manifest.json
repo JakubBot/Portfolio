@@ -2,9 +2,9 @@
   "files": {
     "static/js/0.7873a0a0.chunk.js": "/Portfolio/static/js/0.7873a0a0.chunk.js",
     "static/js/0.7873a0a0.chunk.js.map": "/Portfolio/static/js/0.7873a0a0.chunk.js.map",
-    "main.css": "/Portfolio/static/css/main.9df66f57.chunk.css",
-    "main.js": "/Portfolio/static/js/main.3a136068.chunk.js",
-    "main.js.map": "/Portfolio/static/js/main.3a136068.chunk.js.map",
+    "main.css": "/Portfolio/static/css/main.3b40bcce.chunk.css",
+    "main.js": "/Portfolio/static/js/main.4d863d75.chunk.js",
+    "main.js.map": "/Portfolio/static/js/main.4d863d75.chunk.js.map",
     "runtime-main.js": "/Portfolio/static/js/runtime-main.7140aaad.js",
     "runtime-main.js.map": "/Portfolio/static/js/runtime-main.7140aaad.js.map",
     "static/js/3.40e045d4.chunk.js": "/Portfolio/static/js/3.40e045d4.chunk.js",
@@ -16,13 +16,13 @@
     "static/js/6.f213ec0c.chunk.js": "/Portfolio/static/js/6.f213ec0c.chunk.js",
     "static/js/6.f213ec0c.chunk.js.map": "/Portfolio/static/js/6.f213ec0c.chunk.js.map",
     "index.html": "/Portfolio/index.html",
-    "precache-manifest.61677c971304f81da5db58435c9ce29c.js": "/Portfolio/precache-manifest.61677c971304f81da5db58435c9ce29c.js",
+    "precache-manifest.87e0ae86376a74a5fef541b0e18aa419.js": "/Portfolio/precache-manifest.87e0ae86376a74a5fef541b0e18aa419.js",
     "service-worker.js": "/Portfolio/service-worker.js",
-    "static/css/main.9df66f57.chunk.css.map": "/Portfolio/static/css/main.9df66f57.chunk.css.map",
+    "static/css/main.3b40bcce.chunk.css.map": "/Portfolio/static/css/main.3b40bcce.chunk.css.map",
     "static/js/0.7873a0a0.chunk.js.LICENSE.txt": "/Portfolio/static/js/0.7873a0a0.chunk.js.LICENSE.txt",
     "static/js/3.40e045d4.chunk.js.LICENSE.txt": "/Portfolio/static/js/3.40e045d4.chunk.js.LICENSE.txt",
     "static/js/4.de6186a0.chunk.js.LICENSE.txt": "/Portfolio/static/js/4.de6186a0.chunk.js.LICENSE.txt",
-    "static/media/aeropage2.png": "/Portfolio/static/media/aeropage2.1b5575a9.png",
+    "static/media/aeropage_small.png": "/Portfolio/static/media/aeropage_small.1b5575a9.png",
     "static/media/chess.jpg": "/Portfolio/static/media/chess.f928c6a3.jpg",
     "static/media/displacement-liquid.png": "/Portfolio/static/media/displacement-liquid.c5e2e62d.png",
     "static/media/index.scss": "/Portfolio/static/media/surfer-small.d2491cdd.jpg",
@@ -37,7 +37,7 @@
   "entrypoints": [
     "static/js/runtime-main.7140aaad.js",
     "static/js/3.40e045d4.chunk.js",
-    "static/css/main.9df66f57.chunk.css",
-    "static/js/main.3a136068.chunk.js"
+    "static/css/main.3b40bcce.chunk.css",
+    "static/js/main.4d863d75.chunk.js"
   ]
 }
