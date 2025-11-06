@@ -18,23 +18,23 @@ const Navbar = () => {
     const links = document.querySelectorAll(".menu__scroller ul li a");
     const body = document.querySelector("body");
     tl = timeLine(body);
+    const handleLinkClick = (e) => {
+      e.preventDefault();
+      setNavStatus(false);
+
+      let scrollTarget = e.currentTarget.getAttribute("href");
+
+      tl.reverse().then(() => {
+        gsap.to(window, {
+          duration: 2.2,
+          scrollTo: scrollTarget,
+          ease: "expo.inOut",
+        });
+      });
+    };
 
     links.forEach((link) => {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-        setNavStatus(false);
-
-        let scrollTarget = link.getAttribute("href");
-
-        tl.reverse().then(() => {
-          gsap.to(window, {
-            duration: 2.2,
-            scrollTo: scrollTarget,
-            ease: "expo.inOut",
-          });
-        });
-        hamburger.current.setAttribute("aria-expanded", "false");
-      });
+      link.addEventListener("click", handleLinkClick);
     });
 
     const ListController = import("./pixiListController.js");
@@ -47,12 +47,12 @@ const Navbar = () => {
       controller = null;
 
       links.forEach((link) => {
-        link.removeEventListener("click", () => {});
+        link.removeEventListener("click", handleLinkClick);
       });
 
       tl.kill();
       tl = null;
-    }
+    };
   }, []);
 
   useEffect(() => {
@@ -82,7 +82,7 @@ const Navbar = () => {
 
   return (
     <div className="wrapper">
-      <nav className="nav">
+      <nav className="nav" aria-label="Main navigation">
         <button
           type="button"
           className="nav__hamburger"
@@ -92,10 +92,7 @@ const Navbar = () => {
           aria-controls="main-menu"
           aria-label={navStatus ? "Close menu" : "Open menu"}
         >
-          <span
-            className="nav__hamburger__span icon-menu"
-            name="menu-outline"
-          ></span>
+          <span className="nav__hamburger__span icon-menu"></span>
         </button>
       </nav>
 
@@ -144,7 +141,11 @@ const Navbar = () => {
             </li>
           </a>
         </ul> */}
-        <div className="menu js-portfolio">
+        <div
+          id="main-menu"
+          className="menu js-portfolio"
+          aria-hidden={!navStatus}
+        >
           <div className="menu__informations">
             <div className="menu__links menu__scroller">
               <ul className="menu__links__list">
@@ -197,8 +198,19 @@ const Navbar = () => {
                     href="https://github.com/JakubBot"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="GitHub profile"
                   >
                     <span className="icon-github-circled icon-dark" />
+                  </a>
+                </li>
+                <li className="menu__links__list__item">
+                  <a
+                    href="https://www.linkedin.com/in/jakub-bot-169277286/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn profile"
+                  >
+                    <span className="icon-linkedin-squared icon-dark" />
                   </a>
                 </li>
                 <li className="menu__links__list__item">
@@ -206,17 +218,9 @@ const Navbar = () => {
                     href="https://www.google.com/intl/pl/gmail/about/"
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="Email contact"
                   >
                     <span className="icon-mail-alt icon-dark" />
-                  </a>
-                </li>
-                <li className="menu__links__list__item">
-                  <a
-                    href="https://www.facebook.com/profile.php?id=100009801185275"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span className="icon-facebook-squared icon-dark" />
                   </a>
                 </li>
               </ul>

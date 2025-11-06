@@ -66,12 +66,15 @@ const AboutMe = () => {
         </p>
 
         <p>
-          My full list of skills are{" "}
+          My full list of skills are here:{" "}
           <a
             href="https://github.com/JakubBot/Portfolio"
             className="light-dark underline"
+            aria-label="Visit GitHub Repository - opens in new tab"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            here
+            GitHub Repository
           </a>
         </p>
         <p>

@@ -91,14 +91,28 @@ const Footer = () => {
           <p>Me</p>
         </div>
         <div className="footer__perspective__line">
-          <p>Facebook</p>
+          <p>Github</p>
           <p>
             <a
-              href="https://www.facebook.com/profile.php?id=100009801185275"
+              href="https://github.com/JakubBot"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visit GitHub profile - opens in new tab"
             >
-              KubaBot
+              Jakub Bot
+            </a>
+          </p>
+        </div>
+        <div className="footer__perspective__line">
+          <p>LinkedIn</p>
+          <p>
+            <a
+              href="https://www.linkedin.com/in/jakub-bot-169277286/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit LinkedIn profile - opens in new tab"
+            >
+              Jakub Bot
             </a>
           </p>
         </div>
@@ -109,33 +123,26 @@ const Footer = () => {
               href="https://www.google.com/intl/pl/gmail/about/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Send email to bkuba1401@gmail.com"
             >
               bkuba1401@gmail.com
             </a>
           </p>
         </div>
-        <div className="footer__perspective__line">
-          <p>Github</p>
-          <p>
-            <a
-              href="https://github.com/JakubBot"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              JakubBot
-            </a>
-          </p>
-        </div>
+        
       </div>
       <div className="footer__contact">
-        <h3 className="footer__contact__header">Contact Me</h3>
-        <form onSubmit={sendEmail}>
+        <h2 className="footer__contact__header">Contact Me</h2>
+        <form onSubmit={sendEmail} aria-label="Contact form">
           <Textinput
             name="name"
             value={contactForm.name}
             onChange={handleChange}
             labelText="name"
             errors={errors.name}
+            required
+            aria-describedby={errors.name ? "name-error" : undefined}
+            autoComplete="name"
           />
           <Textinput
             name="email"
@@ -143,6 +150,10 @@ const Footer = () => {
             onChange={handleChange}
             labelText="email"
             errors={errors.email}
+            required
+            type="email"
+            aria-describedby={errors.email ? "email-error" : undefined}
+            autoComplete="email"
           />
           <Textinput
             name="message"
@@ -150,8 +161,16 @@ const Footer = () => {
             onChange={handleChange}
             labelText="message"
             errors={errors.message}
+            required
+            aria-describedby={errors.message ? "message-error" : undefined}
+            autoComplete="off"
           />
-          <button type="submit" className="footer__circle">
+          <button 
+            type="submit" 
+            className="footer__circle"
+            disabled={contactForm.button === 'Thanks' || contactForm.button === 'Error, try later'}
+            aria-label={`Send message - ${contactForm.button}`}
+          >
             <span>{contactForm.button}</span>
           </button>
         </form>

@@ -9,22 +9,41 @@ const TextInput = ({
   labelText,
   placeHolder,
   onChange,
+  required,
+  type = "text",
+  autoComplete,
+  ...props
 }) => {
   return (
     <div className="form__item">
       <label className="form__item__header" htmlFor={name}>
         {labelText}
+        {required && <span aria-label="required"> *</span>}
       </label>
       <input
-        type="text"
+        type={type}
         id={name}
         value={value}
         onChange={onChange}
         name={name}
         className="form__item__input"
         placeholder={placeHolder}
+        required={required}
+        aria-invalid={errors ? "true" : "false"}
+        aria-describedby={errors ? `${name}-error` : undefined}
+        autoComplete={autoComplete}
+        {...props}
       />
-      {errors && <span className="form__item__error">{errors}</span>}
+      {errors && (
+        <span
+          id={`${name}-error`}
+          className="form__item__error"
+          role="alert"
+          aria-live="polite"
+        >
+          {errors}
+        </span>
+      )}
     </div>
   );
 };
@@ -36,5 +55,7 @@ TextInput.propTypes = {
   labelText: PropTypes.string,
   placeHolder: PropTypes.string,
   onChange: PropTypes.func.isRequired,
+  required: PropTypes.bool,
+  type: PropTypes.string,
 };
 export default TextInput;
