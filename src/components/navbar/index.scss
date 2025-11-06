@@ -27,12 +27,12 @@ body.noscroll {
   }
 
   &__hamburger {
-    padding-top: 100px;
+    margin-top: 100px;
     display: inline-block;
     font-size: 3em;
 
     @include rwd(600) {
-      padding-top: 120px;
+      margin-top: 120px;
     }
     @include sDesktop {
       font-size: 3.5em;

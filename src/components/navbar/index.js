@@ -42,6 +42,17 @@ const Navbar = () => {
       controller = new Controller.default();
       controller.init();
     });
+    return () => {
+      controller && controller.destroy();
+      controller = null;
+
+      links.forEach((link) => {
+        link.removeEventListener("click", () => {});
+      });
+
+      tl.kill();
+      tl = null;
+    }
   }, []);
 
   useEffect(() => {
@@ -49,25 +60,46 @@ const Navbar = () => {
   }, [navStatus]);
 
   const hamburgerClick = (e) => {
-    if (e.target.getAttribute("aria-expanded") === "false") {
+    console.log("e.target", e.target);
+    const button = e.currentTarget;
+    const expanded = button.getAttribute("aria-expanded") === "true";
+
+    if (!expanded) {
       setNavStatus(true);
       gsap.to(window, { duration: 0.5, scrollTo: 0 }).then(() => {
         tl.play();
       });
 
-      e.target.setAttribute("aria-expanded", "true");
+      button.setAttribute("aria-expanded", "true");
     } else {
       setNavStatus(false);
 
       tl.reverse();
 
-      e.target.setAttribute("aria-expanded", "false");
+      button.setAttribute("aria-expanded", "false");
     }
   };
 
   return (
     <div className="wrapper">
       <nav className="nav">
+        <button
+          type="button"
+          className="nav__hamburger"
+          ref={hamburger}
+          onClick={hamburgerClick}
+          aria-expanded="false"
+          aria-controls="main-menu"
+          aria-label={navStatus ? "Close menu" : "Open menu"}
+        >
+          <span
+            className="nav__hamburger__span icon-menu"
+            name="menu-outline"
+          ></span>
+        </button>
+      </nav>
+
+      {/* <nav className="nav">
         <div className="nav__hamburger">
           <span
             ref={hamburger}
@@ -77,7 +109,8 @@ const Navbar = () => {
             name="menu-outline"
           ></span>
         </div>
-      </nav>
+      </nav> */}
+
       <div className="container">
         <header className="container__header">Minimal Design</header>
         <header className="container__name">Jakub | Bot</header>
@@ -85,7 +118,7 @@ const Navbar = () => {
           <span>Hel</span>
           <span>lo</span>
         </h4>
-        <ul className="socials">
+        {/* <ul className="socials">
           <a href="#a" className="socials__link">
             <li className="socials__link__item">
               <ion-icon
@@ -110,8 +143,8 @@ const Navbar = () => {
               ></ion-icon>
             </li>
           </a>
-        </ul>
-        <ul className="menu js-portfolio">
+        </ul> */}
+        <div className="menu js-portfolio">
           <div className="menu__informations">
             <div className="menu__links menu__scroller">
               <ul className="menu__links__list">
@@ -221,7 +254,7 @@ const Navbar = () => {
               ></li>
             </ul>
           </div>
-        </ul>
+        </div>
       </div>
     </div>
   );
