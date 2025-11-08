@@ -24,7 +24,7 @@ const Home = () => {
       <Navbar />
       <div className="background__wrapper">
         <Marquee />
-        <Work />
+        {/* <Work /> */}
         <Projects />
         <AboutMe />
         <Footer />
