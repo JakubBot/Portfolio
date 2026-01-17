@@ -43,7 +43,7 @@ const Navbar = () => {
       controller.init();
     });
     return () => {
-      controller && controller.destroy();
+      controller.destroy && controller.destroy();
       controller = null;
 
       links.forEach((link) => {

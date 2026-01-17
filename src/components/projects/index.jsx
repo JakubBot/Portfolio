@@ -23,7 +23,8 @@ const Projects = () => {
         <ProjectImages
           dataDisplacementMap={Images.DisplacementEffect}
           dataImage={Images.Medai}
-          link="https://github.com/PGRRT/rag"
+          link="/rag"
+          // link="https://github.com/PGRRT/rag"
           id="medical"
           text="Data & Innovation & Chat & Research & "
           name="Medical (RAG) - Research Project"

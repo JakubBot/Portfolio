@@ -76,6 +76,16 @@ const SmoothPage = ({ children }) => {
         requestId = requestAnimationFrame(updateScroller);
       }
     }
+
+    return () => {
+      window.removeEventListener("load", onLoad);
+      window.removeEventListener("resize", onResize);
+      document.removeEventListener("scroll", onScroll);
+      if (requestId) {
+        cancelAnimationFrame(requestId);
+      }
+      body.style.height = "";
+    };
   }, []);
   return (
     <>

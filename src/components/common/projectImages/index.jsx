@@ -1,6 +1,7 @@
 import React from "react";
 import CircleText from "../CircleText";
 import "./index.scss";
+import LinkComponent from "../LinkComponent";
 
 const ProjectImages = ({
   right = false,
@@ -18,16 +19,14 @@ const ProjectImages = ({
         data-displacement-map={dataDisplacementMap}
         data-image={dataImage}
       >
-        <a href={link} target="_blank" rel="noopener noreferrer">
+        <LinkComponent href={link} className="projects__images__link" >
           <div className="projects__images__scroller"></div>
-        </a>
+        </LinkComponent>
         {text && <CircleText text={text} id={id} left={!right} />}
       </div>
 
       <p className="projects__images__description">
-        <a href={link} target="_blank" rel="noopener noreferrer">
-          {name}
-        </a>
+        <LinkComponent href={link} className="projects__images__link">{name}</LinkComponent>
       </p>
     </div>
   );
