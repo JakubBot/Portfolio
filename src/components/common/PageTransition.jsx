@@ -121,7 +121,7 @@ const PageTransition = ({ children }) => {
       coverPage(url);
     };
 
-    const links = document.querySelectorAll(".projects__images__link");
+    const links = document.querySelectorAll(".page_transition_link");
     links.forEach((link) => {
       link.addEventListener("click", (e) => {
         e.preventDefault();

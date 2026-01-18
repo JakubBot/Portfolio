@@ -1,0 +1,29 @@
+.navbar__container {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__name {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+  }
+
+  &__links {
+    display: flex;
+    gap: 40px;
+    list-style-type: none;
+
+
+   &__link__item {
+      text-decoration: none;
+      color: black;
+      font-size: 18px;
+      
+      &:hover {
+        color: gray;
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-@import '../../assets/styles/style.scss';
+@import '../../../assets/styles/style.scss';
 
 body.noscroll {
   position: fixed;
@@ -57,7 +57,7 @@ body.noscroll {
   flex-grow: 1;
   height: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
-    url('../../assets/images/forest-small.jpg') 0 0 / cover no-repeat;
+    url('../../../assets/images/forest-small.jpg') 0 0 / cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -263,7 +263,7 @@ body.noscroll {
     width: 0%;
     height: 100%;
     position: relative;
-    background: url('../../assets/images/surfer-small.jpg') no-repeat 50% 50%;
+    background: url('../../../assets/images/surfer-small.jpg') no-repeat 50% 50%;
     background-size: cover;
     position: relative;
     overflow: hidden;

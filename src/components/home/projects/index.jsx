@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Images from "./images";
-import ProjectImages from "../common/projectImages";
+import ProjectImages from "../../common/projectImages";
 import "./index.scss";
 
 const Projects = () => {
@@ -9,7 +9,6 @@ const Projects = () => {
       <div className="projects" id="projects">
         <header className="projects__header">My Projects</header>
 
-       
         <ProjectImages
           dataDisplacementMap={Images.DisplacementEffect}
           dataImage={Images.DynamicHtml}
@@ -23,7 +22,7 @@ const Projects = () => {
         <ProjectImages
           dataDisplacementMap={Images.DisplacementEffect}
           dataImage={Images.Medai}
-          link="/rag"
+          link="/projects/rag"
           // link="https://github.com/PGRRT/rag"
           id="medical"
           text="Data & Innovation & Chat & Research & "

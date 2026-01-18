@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import Marquee from "../../components/marquee";
-import Navbar from "../../components/navbar";
-import Projects from "../../components/projects";
-import AboutMe from "../../components/aboutMe";
-import Footer from "../../components/footer";
-import SmoothPage from "../../components/smoothPage";
-import Work from "../../components/work";
+import Marquee from "../../components/home/marquee";
+import Navbar from "../../components/home/navbar";
+import Projects from "../../components/home/projects";
+import AboutMe from "../../components/home/aboutMe";
+import Footer from "../../components/home/footer";
+import SmoothPage from "../../components/home/smoothPage";
+// import Work from "../../components/home/work";
 import "./index.scss";
 
 const Home = () => {
@@ -13,9 +13,10 @@ const Home = () => {
     // Lazy load the pixiImagesController component
     import("../../components/common/pixiImagesController").then(
       (Controller) => {
+        
         let controller = new Controller.default();
         controller.init();
-      }
+      },
     );
   }, []);
 
