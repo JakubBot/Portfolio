@@ -1,13 +1,13 @@
 import React from "react";
 import ReactPlayer from "react-player";
-import "./preview.scss";
 import { useEffect } from "react";
 import { useRef } from "react";
 import gsap from "gsap";
 import Animation from "./animation.mp4";
-import "./preview.scss";
 
-const Preview = () => {
+import "./video.scss";
+
+const Video = () => {
   const player = useRef(null);
   // const image = useRef(null);
 
@@ -37,7 +37,7 @@ const Preview = () => {
 
   return (
     <>
-      <div ref={player} className="mp4-view background__wrapper">
+      <div ref={player} className="mp4-view">
         <ReactPlayer
           controls={true}
           url={Animation}
@@ -46,8 +46,7 @@ const Preview = () => {
           loop={true}
           // className="preview__video"
           width={960}
-          height={540}
-          // height={200}
+          // height={540}
         />
       </div>
 
@@ -64,4 +63,4 @@ const Preview = () => {
   );
 };
 
-export default Preview;
+export default Video;

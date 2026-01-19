@@ -13,7 +13,8 @@ const Projects = () => {
           dataDisplacementMap={Images.DisplacementEffect}
           dataImage={Images.DynamicHtml}
           // dataImage={Images.Aeropage}
-          link="https://builder.aeropage.io/"
+          // link="https://builder.aeropage.io/"
+          link="/projects/aeropage"
           id="aeropage"
           text="Commercial Project & Commercial Project & "
           name="Aeropage Builder"
@@ -33,7 +34,8 @@ const Projects = () => {
         <ProjectImages
           dataDisplacementMap={Images.DisplacementEffect}
           dataImage={Images.LinearEquations2}
-          link="https://github.com/JakubBot/linear_equations"
+          // link="https://github.com/JakubBot/linear_equations"
+          link="/projects/linear_equations"
           text="Logic & Precision & Balance & Solve & "
           id="equations"
           name="Linear equations"
@@ -41,21 +43,23 @@ const Projects = () => {
 
         <ProjectImages
           dataDisplacementMap={Images.DisplacementEffect}
-          dataImage={Images.Chess}
-          link="https://jakubbot.github.io/Chess-Game"
-          id="chess"
-          text="Strategy & Focus & Patience & Victory & "
-          name="Chess App"
+          dataImage={Images.Backgammon}
+          // link="https://github.com/JakubBot/BackGammon"
+          link="/projects/backgammon"
+          id="backgammon"
+          text="Roll & Move & Win & Repeat & "
+          name="Backgammon"
           right
         />
 
         <ProjectImages
           dataDisplacementMap={Images.DisplacementEffect}
-          dataImage={Images.Backgammon}
-          link="https://github.com/JakubBot/BackGammon"
-          id="backgammon"
-          text="Roll & Move & Win & Repeat & "
-          name="Backgammon"
+          dataImage={Images.Chess}
+          // link="https://jakubbot.github.io/Chess-Game"
+          link="/projects/chess"
+          id="chess"
+          text="Strategy & Focus & Patience & Victory & "
+          name="Chess App"
         />
       </div>
     </>

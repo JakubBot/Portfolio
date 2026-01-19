@@ -28,9 +28,7 @@ const SmoothPage = ({ children }) => {
       force3D: true,
     });
 
-    
     function onLoad() {
-      
       updateScroller();
       window.focus();
       window.addEventListener("resize", onResize);

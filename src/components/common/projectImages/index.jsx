@@ -19,14 +19,14 @@ const ProjectImages = ({
         data-displacement-map={dataDisplacementMap}
         data-image={dataImage}
       >
-        <LinkComponent href={link} className="page_transition_link">
+        <LinkComponent href={link} >
           <div className="projects__images__scroller"></div>
         </LinkComponent>
         {text && <CircleText text={text} id={id} left={!right} />}
       </div>
 
       <p className="projects__images__description">
-        <LinkComponent href={link} className="page_transition_link">
+        <LinkComponent href={link} >
           {name}
         </LinkComponent>
       </p>

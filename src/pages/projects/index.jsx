@@ -2,30 +2,61 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import NavBar from "../../components/blog/navbar";
 import AnimatedHeader from "../../components/blog/Animated/Header";
-import Preview from "../../components/blog/Animated/Preview";
+import Video from "../../components/blog/Animated/Video";
 
 import "./index.scss";
+
+const pageData = {
+   aeropage: {
+    header: "Aeropage Builder",
+    subTitle: "Commercial Project • No Code build • UI/UX Design",
+    category: "Commercial",
+    timeRead: 4,
+  },
+  rag: {
+    header: "Rag Research Project",
+    subTitle:
+      "Backend Architecture • Java Systems • Scalable RAG Infrastructure",
+    category: "Research",
+    timeRead: 6,
+  },
+   linear_equations: {
+    header: "Linear Equations Solver",
+    subTitle: "Mathematical Algorithms • Problem Solving • Educational Tool",
+    category: "Education",
+    timeRead: 5,
+  },
+   backgammon: {
+    header: "Backgammon Game",
+    subTitle: "Game Development • AI Opponent • Interactive Gameplay",
+    category: "Entertainment",
+    timeRead: 3,
+  },
+  chess: {
+    header: "Chess Game",
+    subTitle: "Strategic Gameplay • AI Integration • Web-Based Interface",
+    category: "Entertainment",
+    timeRead: 4,
+  },
+ 
+};
 
 const Projects = () => {
   const { id } = useParams();
 
   console.log("id", id);
 
-  const header = "Rag Research Project";
-  const subTitle =
-    "Backend Architecture • Java Systems • Scalable RAG Infrastructure";
+  const { header, subTitle, category, timeRead } = pageData[id] || {};
 
   return (
-
     <div className="blog__container">
-      <NavBar />
+      <NavBar category={category} timeRead={timeRead} />
       <div className="blog__content">
         <div className="blog__header-wrapper">
           <AnimatedHeader
             text={header}
             fontSize={56}
             delay={0.5}
-            y={60}
             stagger={0.03}
           />
         </div>
@@ -35,27 +66,13 @@ const Projects = () => {
             text={subTitle}
             fontSize={28}
             delay={0.7}
-            y={30}
             stagger={0.015}
           />
         </div>
 
-       <Preview />
-        {/* <video
-          width="100%"
-          height="auto"
-          controls 
-          muted 
-          loop
-        >
-          <source
-            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-            type="video/mp4"
-          />
-        </video> */}
+        <Video />
       </div>
     </div>
-
   );
 };
 

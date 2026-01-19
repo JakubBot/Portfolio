@@ -24,7 +24,8 @@ const LinkComponent = ({ href, target, rel, children, id, className }) => {
 
   const normalizedHref = href.startsWith("/") ? href : `/${href}`;
 
-  return <Link to={normalizedHref} id={id} className={className}>{children}</Link>;
+  return <Link to={normalizedHref} id={id} className={`${className} page_transition_link`}>{children}</Link>;
 };
+// 
 
 export default LinkComponent;

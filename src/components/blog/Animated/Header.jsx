@@ -4,14 +4,14 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import "./header.scss";
 
-const Header = ({ text, fontSize, delay, y,stagger }) => {
+const Header = ({ text, fontSize = 48, delay, stagger }) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
     const chars = containerRef.current.querySelectorAll(".animated__char");
 
     gsap.from(chars, {
-      y: y || 60,
+      y: fontSize,
       opacity: 0,
       duration: 1,
       ease: "power4.out",
@@ -22,16 +22,21 @@ const Header = ({ text, fontSize, delay, y,stagger }) => {
     return () => {
       gsap.killTweensOf(chars);
     };
-  }, [delay, y, stagger]);
+  }, [delay, fontSize, stagger]);
 
   return (
-    <div ref={containerRef}>
+    <div
+      ref={containerRef}
+      style={{
+        lineHeight: `${fontSize}px`,
+      }}
+    >
       {text?.split("").map((char, index) => (
         <span
           className="animated__char"
           key={index}
           style={{
-            fontSize: fontSize || 48,
+            fontSize: fontSize,
             display: "inline-block",
             whiteSpace: char === " " ? "pre" : "normal",
           }}

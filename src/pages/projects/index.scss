@@ -3,7 +3,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 10px;
     align-items: center;
   }
 
@@ -11,9 +11,11 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding: 0 20px;
+    padding: 20px ;
     max-width: 1200px;
-
+    width: 100%;
+    justify-content: center;
+    align-items: center;
   }
 
   &__header-wrapper {
@@ -21,7 +23,6 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 64px;
     overflow: hidden;
   }
   &__subtitle-wrapper {
@@ -29,10 +30,6 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 32px;
     overflow: hidden;
   }
-
- 
 }
-
