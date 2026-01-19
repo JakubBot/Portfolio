@@ -6,15 +6,18 @@ import Projects from "./pages/projects";
 import PageTransition from "./components/common/PageTransition";
 
 import "./index.scss";
+import SmoothPage from "./components/home/SmoothPage";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router basename={process.env.PUBLIC_URL}>
       <PageTransition>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/projects/:id" component={Projects} />
-        </Switch>
+        <SmoothPage>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/projects/:id" component={Projects} />
+          </Switch>
+        </SmoothPage>
       </PageTransition>
     </Router>
   </React.StrictMode>,

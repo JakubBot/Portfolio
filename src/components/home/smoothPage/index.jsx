@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { gsap } from "gsap";
 
 import "./index.scss";
 
 const SmoothPage = ({ children }) => {
+  const location = useLocation();
+
   useEffect(() => {
     if (window.innerWidth < 1200) return;
     var html = document.documentElement;
@@ -25,14 +28,19 @@ const SmoothPage = ({ children }) => {
       force3D: true,
     });
 
-    window.addEventListener("load", onLoad);
-
+    
     function onLoad() {
+      
       updateScroller();
       window.focus();
       window.addEventListener("resize", onResize);
       document.addEventListener("scroll", onScroll);
     }
+
+    // Initialize after DOM is ready
+    requestAnimationFrame(() => {
+      onLoad();
+    });
 
     function updateScroller() {
       var resized = scroller.resizeRequest > 0;
@@ -78,7 +86,6 @@ const SmoothPage = ({ children }) => {
     }
 
     return () => {
-      window.removeEventListener("load", onLoad);
       window.removeEventListener("resize", onResize);
       document.removeEventListener("scroll", onScroll);
       if (requestId) {
@@ -86,7 +93,8 @@ const SmoothPage = ({ children }) => {
       }
       body.style.height = "";
     };
-  }, []);
+  }, [location.pathname]);
+
   return (
     <>
       {window.innerWidth >= 1200 ? (

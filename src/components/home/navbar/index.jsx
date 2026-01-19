@@ -60,7 +60,6 @@ const Navbar = () => {
   }, [navStatus]);
 
   const hamburgerClick = (e) => {
-    console.log("e.target", e.target);
     const button = e.currentTarget;
     const expanded = button.getAttribute("aria-expanded") === "true";
 

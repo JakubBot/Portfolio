@@ -4,7 +4,6 @@ import Navbar from "../../components/home/navbar";
 import Projects from "../../components/home/projects";
 import AboutMe from "../../components/home/aboutMe";
 import Footer from "../../components/home/footer";
-import SmoothPage from "../../components/home/smoothPage";
 // import Work from "../../components/home/work";
 import "./index.scss";
 
@@ -21,7 +20,7 @@ const Home = () => {
   }, []);
 
   return (
-    <SmoothPage>
+    <>
       <Navbar />
       <div className="background__wrapper">
         <Marquee />
@@ -30,7 +29,7 @@ const Home = () => {
         <AboutMe />
         <Footer />
       </div>
-    </SmoothPage>
+    </>
   );
 };
 
