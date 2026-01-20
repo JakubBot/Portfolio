@@ -6,7 +6,7 @@ import Projects from "./pages/projects";
 import PageTransition from "./components/common/PageTransition";
 
 import "./index.scss";
-import SmoothPage from "./components/home/SmoothPage";
+import SmoothPage from "./components/common/SmoothPage";
 
 ReactDOM.render(
   <React.StrictMode>

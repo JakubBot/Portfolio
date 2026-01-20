@@ -5,7 +5,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import Animation from "./animation.mp4";
 
-import "./video.scss";
+import "./index.scss";
 
 const Video = () => {
   const player = useRef(null);

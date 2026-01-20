@@ -2,7 +2,7 @@ import gsap from "gsap";
 import React from "react";
 import { useRef } from "react";
 import { useEffect } from "react";
-import "./header.scss";
+import "./index.scss";
 
 const Header = ({ text, fontSize = 48, delay, stagger }) => {
   const containerRef = useRef(null);

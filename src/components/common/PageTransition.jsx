@@ -25,45 +25,45 @@ const PageTransition = ({ children }) => {
 
       tl.to(blocksRef.current, {
         scaleX: 1,
-        duration: 0.4,
+        duration: 0.5,
         stagger: 0.02,
         ease: "power2.out",
         transformOrigin: "left",
-      })
-        .set(logoOverlayRef.current, { opacity: 1 }, "-=0.2")
-        .set(
-          logoRef.current.querySelector("path"),
-          {
-            strokeDashoffset: logoRef.current
-              .querySelector("path")
-              .getTotalLength(),
-            fill: "transparent",
-          },
-          "-=0.25",
-        )
-        .to(
-          logoRef.current.querySelector("path"),
-          {
-            strokeDashoffset: 0,
-            duration: 2,
-            ease: "power2.inOut",
-          },
-          "-=0.5",
-        )
-        .to(
-          logoRef.current.querySelector("path"),
-          {
-            fill: "#e3e4d8",
-            duration: 1,
-            ease: "power2.out",
-          },
-          "-=0.5",
-        )
-        .to(logoOverlayRef.current, {
-          opacity: 0,
-          duration: 0.25,
-          ease: "power2.out",
-        });
+      });
+      // .set(logoOverlayRef.current, { opacity: 1 }, "-=0.2")
+      // .set(
+      //   logoRef.current.querySelector("path"),
+      //   {
+      //     strokeDashoffset: logoRef.current
+      //       .querySelector("path")
+      //       .getTotalLength(),
+      //     fill: "transparent",
+      //   },
+      //   "-=0.25",
+      // )
+      // .to(
+      //   logoRef.current.querySelector("path"),
+      //   {
+      //     strokeDashoffset: 0,
+      //     duration: 1.6,
+      //     ease: "power2.inOut",
+      //   },
+      //   "-=0.5",
+      // )
+      // .to(
+      //   logoRef.current.querySelector("path"),
+      //   {
+      //     fill: "#e3e4d8",
+      //     duration: 0.8,
+      //     ease: "power2.out",
+      //   },
+      //   "-=0.2",
+      // )
+      // .to(logoOverlayRef.current, {
+      //   opacity: 0,
+      //   duration: 0.25,
+      //   ease: "power2.out",
+      // });
     },
     [router],
   );
@@ -73,7 +73,7 @@ const PageTransition = ({ children }) => {
 
     gsap.to(blocksRef.current, {
       scaleX: 0,
-      duration: 0.4,
+      duration: 0.5,
       stagger: 0.02,
       ease: "power2.out",
       transformOrigin: "right",
@@ -121,27 +121,27 @@ const PageTransition = ({ children }) => {
       coverPage(url);
     };
 
+    const handleClick = (e) => {
+      e.preventDefault();
+
+      const linkPathname = new URL(e.currentTarget.href, window.location.origin)
+        .pathname;
+      const basename = process.env.PUBLIC_URL || "";
+      const url = linkPathname.replace(basename, "") || "/";
+
+      if (url !== pathname) {
+        handleRouteChange(url);
+      }
+    };
+
     const links = document.querySelectorAll(".page_transition_link");
     links.forEach((link) => {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        const linkPathname = new URL(
-          e.currentTarget.href,
-          window.location.origin,
-        ).pathname;
-        const basename = process.env.PUBLIC_URL || "";
-        const url = linkPathname.replace(basename, "") || "/";
-
-        if (url !== pathname) {
-          handleRouteChange(url);
-        }
-      });
+      link.addEventListener("click", handleClick);
     });
 
     return () => {
       links.forEach((link) => {
-        link.removeEventListener("click", handleRouteChange);
+        link.removeEventListener("click", handleClick);
       });
     };
   }, [coverPage, pathname]);
