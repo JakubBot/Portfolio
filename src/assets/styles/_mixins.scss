@@ -1,4 +1,4 @@
-@import './breakPoints';
+@import "./breakPoints";
 
 @mixin phone {
   @media screen and (min-width: $screen-sm-min) {
@@ -26,7 +26,15 @@
   }
 }
 @mixin rwd($screen) {
-  @media (min-width: $screen+'px') {
+  @media (min-width: $screen+"px") {
     @content;
   }
+}
+
+@mixin divider($height: 1px, $color: #ddd) {
+  border: none;
+  height: $height;
+  background-color: $color;
+  margin: 20px 0;
+  width: 100%;
 }

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Images from "./images";
-import ProjectImages from "../../common/projectImages";
+import ProjectImages from "../../common/ProjectImages";
 import "./index.scss";
 
 const Projects = () => {

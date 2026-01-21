@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Projects from "./pages/projects";
 import PageTransition from "./components/common/PageTransition";
+import SmoothPage from "./components/common/SmoothPage";
 
 import "./index.scss";
-import SmoothPage from "./components/common/SmoothPage";
+
 
 ReactDOM.render(
   <React.StrictMode>

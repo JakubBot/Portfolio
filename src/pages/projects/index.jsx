@@ -1,13 +1,17 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import NavBar from "../../components/blog/navbar";
+import NavBar from "../../components/blog/Navbar";
 import AnimatedHeader from "../../components/blog/Animated/Header";
 import Video from "../../components/blog/Animated/Video";
 
 import "./index.scss";
+import Backgammon from "../../components/blog/Description/Backgammon";
+import BackgammonVideo from "../../assets/videos/backgammon.mp4";
+
+import Divider from "../../components/common/Divider";
 
 const pageData = {
-   aeropage: {
+  aeropage: {
     header: "Aeropage Builder",
     subTitle: "Commercial Project • No Code build • UI/UX Design",
     category: "Commercial",
@@ -20,17 +24,18 @@ const pageData = {
     category: "Research",
     timeRead: 6,
   },
-   linear_equations: {
+  linear_equations: {
     header: "Linear Equations Solver",
     subTitle: "Mathematical Algorithms • Problem Solving • Educational Tool",
     category: "Education",
     timeRead: 5,
   },
-   backgammon: {
-    header: "Backgammon Game",
-    subTitle: "Game Development • AI Opponent • Interactive Gameplay",
-    category: "Entertainment",
+  backgammon: {
+    header: "Backgammon CLI",
+    subTitle: "Rule Engine • Local Multiplayer • Hall of Fame",
+    category: "Software Development",
     timeRead: 3,
+    githubLink: "",
   },
   chess: {
     header: "Chess Game",
@@ -38,7 +43,6 @@ const pageData = {
     category: "Entertainment",
     timeRead: 4,
   },
- 
 };
 
 const Projects = () => {
@@ -70,7 +74,12 @@ const Projects = () => {
           />
         </div>
 
-        <Video />
+        <Video video={BackgammonVideo} />
+
+        <Divider />
+        <Backgammon />
+
+        <h4>tutaj Next i prev, i gh links</h4>
       </div>
     </div>
   );
