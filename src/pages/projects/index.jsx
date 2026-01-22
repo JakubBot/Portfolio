@@ -3,12 +3,13 @@ import { useParams } from "react-router-dom";
 import NavBar from "../../components/blog/Navbar";
 import AnimatedHeader from "../../components/blog/Animated/Header";
 import Video from "../../components/blog/Animated/Video";
-
-import "./index.scss";
 import Backgammon from "../../components/blog/Description/Backgammon";
 import BackgammonVideo from "../../assets/videos/backgammon.mp4";
-
+import RagVideoHorizontal from "../../assets/videos/rag_horizontal.mp4";
+import RagVideoVertical from "../../assets/videos/rag_vertical.mp4";
 import Divider from "../../components/common/Divider";
+
+import "./index.scss";
 
 const pageData = {
   aeropage: {
@@ -16,19 +17,25 @@ const pageData = {
     subTitle: "Commercial Project • No Code build • UI/UX Design",
     category: "Commercial",
     timeRead: 4,
+    videoHorizontal: null,
+    videoVertical: null,
   },
   rag: {
     header: "Rag Research Project",
     subTitle:
-      "Backend Architecture • Java Systems • Scalable RAG Infrastructure",
+      "Bielik LLM • Distributed Systems • Backend Optimization",
     category: "Research",
     timeRead: 6,
+    videoHorizontal: RagVideoHorizontal,
+    videoVertical: RagVideoVertical,
   },
   linear_equations: {
     header: "Linear Equations Solver",
     subTitle: "Mathematical Algorithms • Problem Solving • Educational Tool",
     category: "Education",
     timeRead: 5,
+    videoHorizontal: null,
+    videoVertical: null,
   },
   backgammon: {
     header: "Backgammon CLI",
@@ -36,12 +43,16 @@ const pageData = {
     category: "Software Development",
     timeRead: 3,
     githubLink: "",
+    videoHorizontal: BackgammonVideo,
+    videoVertical: null,
   },
   chess: {
     header: "Chess Game",
     subTitle: "Strategic Gameplay • AI Integration • Web-Based Interface",
     category: "Entertainment",
     timeRead: 4,
+    videoHorizontal: null,
+    videoVertical: null,
   },
 };
 
@@ -50,7 +61,14 @@ const Projects = () => {
 
   console.log("id", id);
 
-  const { header, subTitle, category, timeRead } = pageData[id] || {};
+  const {
+    header,
+    subTitle,
+    category,
+    timeRead,
+    videoHorizontal,
+    videoVertical,
+  } = pageData[id] || {};
 
   return (
     <div className="blog__container">
@@ -74,7 +92,10 @@ const Projects = () => {
           />
         </div>
 
-        <Video video={BackgammonVideo} />
+        <Video
+          videoHorizontal={videoHorizontal}
+          videoVertical={videoVertical}
+        />
 
         <Divider />
         <Backgammon />

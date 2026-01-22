@@ -3,14 +3,19 @@ import ReactPlayer from "react-player";
 import { useEffect } from "react";
 import { useRef } from "react";
 import gsap from "gsap";
+import useViewport from "../../../../hooks/useViewport";
 
 import "./index.scss";
 
-const Video = ({
-  video,
-
-}) => {
+const viewportMaxWidthForVerticalVideo = 550;
+const Video = ({ videoHorizontal, videoVertical }) => {
   const player = useRef(null);
+  const { width } = useViewport();
+
+  const videoSrc =
+    width < viewportMaxWidthForVerticalVideo && videoVertical
+      ? videoVertical
+      : videoHorizontal;
 
   useEffect(() => {
     if (player.current) {
@@ -32,12 +37,13 @@ const Video = ({
       <div ref={player} className="mp4-view">
         <ReactPlayer
           controls={true}
-          url={video}
+          url={videoSrc}
           // url="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
           // playing={true}
           loop={true}
           // className="preview__video"
-          width={750}
+          width={1000}
+          // width={750}
           height="auto"
         />
       </div>
