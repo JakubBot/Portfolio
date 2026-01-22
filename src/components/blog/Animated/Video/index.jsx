@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import gsap from "gsap";
 import useViewport from "../../../../hooks/useViewport";
-
+import { jsx, css } from "@emotion/react";
 import "./index.scss";
 
 const viewportMaxWidthForVerticalVideo = 550;
@@ -41,7 +41,6 @@ const Video = ({ videoHorizontal, videoVertical }) => {
           // url="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
           // playing={true}
           loop={true}
-          // className="preview__video"
           width={1000}
           // width={750}
           height="auto"

@@ -22,8 +22,7 @@ const pageData = {
   },
   rag: {
     header: "Rag Research Project",
-    subTitle:
-      "Bielik LLM • Distributed Systems • Backend Optimization",
+    subTitle: "Bielik LLM • Distributed Systems • Backend Optimization",
     category: "Research",
     timeRead: 6,
     videoHorizontal: RagVideoHorizontal,
@@ -59,7 +58,11 @@ const pageData = {
 const Projects = () => {
   const { id } = useParams();
 
-  console.log("id", id);
+  const projectData = pageData[id];
+
+  if (!projectData) {
+    return <div className="blog__container">Project not found</div>;
+  }
 
   const {
     header,
@@ -68,7 +71,7 @@ const Projects = () => {
     timeRead,
     videoHorizontal,
     videoVertical,
-  } = pageData[id] || {};
+  } = projectData;
 
   return (
     <div className="blog__container">
