@@ -24,9 +24,9 @@ const ProjectContent = ({ projectId }) => {
         css={css`
           display: flex;
           flex-direction: column;
-          gap: 2.5rem;
+          gap: 2.2rem;
           padding: 20px;
-          max-width: 1200px;
+          max-width: 1000px;
           width: 100%;
           justify-content: center;
           align-items: center;
@@ -46,6 +46,7 @@ const ProjectContent = ({ projectId }) => {
             fontSize={typographyValues.textTitle.fontSize}
             delay={0.5}
             stagger={0.03}
+            mobileSize={typographyValues.textXxl.fontSize}
           />
         </div>
 
@@ -57,6 +58,8 @@ const ProjectContent = ({ projectId }) => {
         />
 
         <Divider />
+
+
         <Backgammon />
 
         <h4>tutaj Next i prev, i gh links</h4>

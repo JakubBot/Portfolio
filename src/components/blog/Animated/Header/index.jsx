@@ -5,27 +5,43 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import { typography } from "../../../../constants/typography";
 import { colorPalette } from "../../../../constants/colorPalette";
+import useViewport from "../../../../hooks/useViewport";
 
-const Header = ({ text, fontSize = 3, delay, stagger }) => {
+const Header = ({
+  text,
+  fontSize,
+  delay,
+  stagger = 0.03,
+  mobileSize,
+  textBold = true,
+}) => {
   const containerRef = useRef(null);
+  const { isMobile } = useViewport();
+
+  const currentFont = isMobile && mobileSize ? mobileSize : fontSize;
 
   useEffect(() => {
     const chars = containerRef.current.querySelectorAll(".animated__char");
 
     const anim = gsap.from(chars, {
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top bottom-=15%",
+        toggleActions: "play none none reverse",
+      },
+
       yPercent: 110,
-      // y: `${fontSize}rem`,
       opacity: 0,
       duration: 1,
       ease: "power4.out",
-      stagger: stagger || 0.03,
+      stagger: stagger,
       delay: delay,
     });
 
     return () => {
       anim.kill();
     };
-  }, [delay, fontSize, stagger]);
+  }, [delay, stagger]);
 
   const words = text?.split(" ");
 
@@ -37,7 +53,7 @@ const Header = ({ text, fontSize = 3, delay, stagger }) => {
           css={css`
             display: inline-block;
             white-space: nowrap;
-            margin-right: ${fontSize / 4}rem;
+            margin-right: ${currentFont / 4}rem;
             overflow: hidden;
             vertical-align: top;
           `}
@@ -47,10 +63,10 @@ const Header = ({ text, fontSize = 3, delay, stagger }) => {
               className="animated__char"
               key={charIndex}
               css={[
-                typography.textBold,
+                textBold && typography.textBold,
                 css`
                   color: ${colorPalette.textHeader};
-                  font-size: ${fontSize}rem;
+                  font-size: ${currentFont}rem;
                   display: inline-block;
                 `,
               ]}

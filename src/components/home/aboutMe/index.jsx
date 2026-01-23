@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 
 import "./index.scss";
 
-gsap.registerPlugin(ScrollTrigger);
 const AboutMe = () => {
   useEffect(() => {
     const background__wrapper = document.querySelector(".background__wrapper");

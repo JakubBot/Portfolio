@@ -31,7 +31,7 @@ const projectData = {
     header: "Backgammon CLI",
     subTitle: "Rule Engine • Local Multiplayer • Hall of Fame",
     tags: ["Rule Engine", "Local Multiplayer", "Hall of Fame"],
-    category: "Software Development",
+    category: "Game",
     timeRead: 3,
     githubLink: "",
     videoHorizontal: BackgammonVideo,

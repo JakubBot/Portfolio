@@ -16,6 +16,12 @@ export const typographyValues = {
     lineHeight: 1.3,
     letterSpacing: "0",
   },
+  textSectionHeader: {
+    fontSize: 2.2, // 35px
+    fontWeight: 600,
+    lineHeight: 1.3,
+    letterSpacing: "0",
+  },
   textXxl: {
     fontSize: 2.5, // 40px
     fontWeight: 700,
@@ -78,6 +84,12 @@ export const typography = {
     font-weight: ${typographyValues.textSubtitle.fontWeight};
     line-height: ${typographyValues.textSubtitle.lineHeight};
     letter-spacing: ${typographyValues.textSubtitle.letterSpacing};
+  `,
+  textSectionHeader: css`
+    font-size: ${typographyValues.textSectionHeader.fontSize}rem;
+    font-weight: ${typographyValues.textSectionHeader.fontWeight};
+    line-height: ${typographyValues.textSectionHeader.lineHeight};
+    letter-spacing: ${typographyValues.textSectionHeader.letterSpacing};
   `,
   textXxl: css`
     font-size: ${typographyValues.textXxl.fontSize}rem;

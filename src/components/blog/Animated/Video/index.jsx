@@ -51,7 +51,7 @@ const Video = ({ videoHorizontal, videoVertical }) => {
           controls={true}
           url={videoSrc}
           loop={true}
-          width={1000}
+          width={900}
           height="auto"
         />
       </div>

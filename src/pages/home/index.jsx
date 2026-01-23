@@ -5,7 +5,17 @@ import Projects from "../../components/home/projects";
 import AboutMe from "../../components/home/aboutMe";
 import Footer from "../../components/home/footer";
 // import Work from "../../components/home/work";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+
 import "./index.scss";
+
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
+
 
 const Home = () => {
   useEffect(() => {

@@ -14,7 +14,7 @@ const NavBar = ({ category, timeRead }) => {
   return (
     <nav
       css={css`
-        padding: 35px 20px;
+        padding: 1.8rem 20px;
         display: flex;
         justify-content: space-between;
         align-items: center;

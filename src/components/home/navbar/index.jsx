@@ -1,12 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import timeLine from "./gsapAnimations.js";
 import Images from "./images.js";
 
 import "./index.scss";
 
-gsap.registerPlugin(ScrollToPlugin);
+
 
 let controller = null;
 let tl = null;

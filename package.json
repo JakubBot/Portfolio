@@ -20,7 +20,6 @@
     "react-scripts": "3.4.1",
     "react-transition-group": "^4.4.1",
     "sass": "^1.49.0",
-    "scrollmagic": "^2.0.8",
     "scrollscene": "0.0.24"
   },
   "scripts": {
