@@ -1,17 +1,20 @@
+import { css } from "@emotion/react";
 import gsap from "gsap";
 import React from "react";
 import { useRef } from "react";
 import { useEffect } from "react";
-import "./index.scss";
+import { typography } from "../../../../constants/typography";
+import { colorPalette } from "../../../../constants/colorPalette";
 
-const Header = ({ text, fontSize = 48, delay, stagger }) => {
+const Header = ({ text, fontSize = 3, delay, stagger }) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
     const chars = containerRef.current.querySelectorAll(".animated__char");
 
-    gsap.from(chars, {
-      y: fontSize,
+    const anim = gsap.from(chars, {
+      yPercent: 110,
+      // y: `${fontSize}rem`,
       opacity: 0,
       duration: 1,
       ease: "power4.out",
@@ -20,28 +23,41 @@ const Header = ({ text, fontSize = 48, delay, stagger }) => {
     });
 
     return () => {
-      gsap.killTweensOf(chars);
+      anim.kill();
     };
   }, [delay, fontSize, stagger]);
 
+  const words = text?.split(" ");
+
   return (
-    <div
-      ref={containerRef}
-      style={{
-        lineHeight: `${fontSize}px`,
-      }}
-    >
-      {text?.split("").map((char, index) => (
+    <div ref={containerRef}>
+      {words?.map((word, wordIndex) => (
         <span
-          className="animated__char"
-          key={index}
-          style={{
-            fontSize: fontSize,
-            display: "inline-block",
-            whiteSpace: char === " " ? "pre" : "normal",
-          }}
+          key={wordIndex}
+          css={css`
+            display: inline-block;
+            white-space: nowrap;
+            margin-right: ${fontSize / 4}rem;
+            overflow: hidden;
+            vertical-align: top;
+          `}
         >
-          {char}
+          {word.split("").map((char, charIndex) => (
+            <span
+              className="animated__char"
+              key={charIndex}
+              css={[
+                typography.textBold,
+                css`
+                  color: ${colorPalette.textHeader};
+                  font-size: ${fontSize}rem;
+                  display: inline-block;
+                `,
+              ]}
+            >
+              {char}
+            </span>
+          ))}
         </span>
       ))}
     </div>

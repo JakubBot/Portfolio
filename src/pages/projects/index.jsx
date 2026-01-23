@@ -1,99 +1,87 @@
+import { css } from "@emotion/react";
 import React from "react";
 import { useParams } from "react-router-dom";
 import NavBar from "../../components/blog/Navbar";
 import AnimatedHeader from "../../components/blog/Animated/Header";
 import Video from "../../components/blog/Animated/Video";
 import Backgammon from "../../components/blog/Description/Backgammon";
-import BackgammonVideo from "../../assets/videos/backgammon.mp4";
-import RagVideoHorizontal from "../../assets/videos/rag_horizontal.mp4";
-import RagVideoVertical from "../../assets/videos/rag_vertical.mp4";
+
 import Divider from "../../components/common/Divider";
+import { breakPointsMediaQueries } from "../../constants/breakPoints";
+import { colorPalette } from "../../constants/colorPalette";
+import { typographyValues } from "../../constants/typography";
+import { RenderTags } from "../../components/common/Tag";
+import projectData from "../../constants/projectData";
 
 import "./index.scss";
-
-const pageData = {
-  aeropage: {
-    header: "Aeropage Builder",
-    subTitle: "Commercial Project • No Code build • UI/UX Design",
-    category: "Commercial",
-    timeRead: 4,
-    videoHorizontal: null,
-    videoVertical: null,
-  },
-  rag: {
-    header: "Rag Research Project",
-    subTitle: "Bielik LLM • Distributed Systems • Backend Optimization",
-    category: "Research",
-    timeRead: 6,
-    videoHorizontal: RagVideoHorizontal,
-    videoVertical: RagVideoVertical,
-  },
-  linear_equations: {
-    header: "Linear Equations Solver",
-    subTitle: "Mathematical Algorithms • Problem Solving • Educational Tool",
-    category: "Education",
-    timeRead: 5,
-    videoHorizontal: null,
-    videoVertical: null,
-  },
-  backgammon: {
-    header: "Backgammon CLI",
-    subTitle: "Rule Engine • Local Multiplayer • Hall of Fame",
-    category: "Software Development",
-    timeRead: 3,
-    githubLink: "",
-    videoHorizontal: BackgammonVideo,
-    videoVertical: null,
-  },
-  chess: {
-    header: "Chess Game",
-    subTitle: "Strategic Gameplay • AI Integration • Web-Based Interface",
-    category: "Entertainment",
-    timeRead: 4,
-    videoHorizontal: null,
-    videoVertical: null,
-  },
-};
+import ProjectContent from "../../components/blog/ProjectContent";
 
 const Projects = () => {
   const { id } = useParams();
 
-  const projectData = pageData[id];
+  const project = projectData[id];
 
-  if (!projectData) {
-    return <div className="blog__container">Project not found</div>;
+  if (!project) {
+    return (
+      <div
+        css={css`
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          align-items: center;
+        `}
+      >
+        Project not found
+      </div>
+    );
   }
 
-  const {
-    header,
-    subTitle,
-    category,
-    timeRead,
-    videoHorizontal,
-    videoVertical,
-  } = projectData;
+  const { category, timeRead } = project;
 
   return (
-    <div className="blog__container">
+    <div
+      css={css`
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        color: ${colorPalette.text};
+      `}
+    >
       <NavBar category={category} timeRead={timeRead} />
-      <div className="blog__content">
-        <div className="blog__header-wrapper">
+      <ProjectContent projectId={id} />
+      {/* <div
+        css={css`
+          display: flex;
+          flex-direction: column;
+          gap: 2.5rem;
+          padding: 20px;
+          max-width: 1200px;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+        `}
+      >
+        <div
+          css={css`
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            overflow: hidden;
+          `}
+        >
           <AnimatedHeader
             text={header}
-            fontSize={56}
+            fontSize={typographyValues.textTitle.fontSize}
             delay={0.5}
             stagger={0.03}
           />
         </div>
 
-        <div className="blog__subtitle-wrapper">
-          <AnimatedHeader
-            text={subTitle}
-            fontSize={28}
-            delay={0.7}
-            stagger={0.015}
-          />
-        </div>
+        <RenderTags tags={tags} />
 
         <Video
           videoHorizontal={videoHorizontal}
@@ -104,7 +92,7 @@ const Projects = () => {
         <Backgammon />
 
         <h4>tutaj Next i prev, i gh links</h4>
-      </div>
+      </div> */}
     </div>
   );
 };

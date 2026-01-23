@@ -4,8 +4,7 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import gsap from "gsap";
 import useViewport from "../../../../hooks/useViewport";
-import { jsx, css } from "@emotion/react";
-import "./index.scss";
+import { css } from "@emotion/react";
 
 const viewportMaxWidthForVerticalVideo = 550;
 const Video = ({ videoHorizontal, videoVertical }) => {
@@ -34,15 +33,25 @@ const Video = ({ videoHorizontal, videoVertical }) => {
 
   return (
     <>
-      <div ref={player} className="mp4-view">
+      <div
+        ref={player}
+        css={css`
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+          position: relative;
+          top: -25px;
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          video {
+            border-radius: 5px;
+          }
+        `}
+      >
         <ReactPlayer
           controls={true}
           url={videoSrc}
-          // url="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-          // playing={true}
           loop={true}
           width={1000}
-          // width={750}
           height="auto"
         />
       </div>

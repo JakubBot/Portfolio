@@ -1,42 +1,20 @@
 @import "../../assets/styles/style.scss";
 
-.blog {
-  &__container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
+html {
+  font-size: 86.5%;
+
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.5;
+
+  @include tablet {
+    font-size: 93.75%;
   }
 
-  &__content {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    padding: 20px;
-    max-width: 1200px;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-
-    // for mobile smaller padding
-    @include phone {
-      padding: 20px 40px;
-    }
+  @include sDesktop {
+    font-size: 93.75%;
   }
 
-  &__header-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    overflow: hidden;
-  }
-  &__subtitle-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    overflow: hidden;
+  @include lDesktop {
+    font-size: 100%;
   }
 }
