@@ -5,6 +5,7 @@ import { useEffect, useCallback } from "react";
 import gsap from "gsap";
 import { css } from "@emotion/react";
 import { useLayoutEffect } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const overlayStyle = css`
   position: fixed;
@@ -27,15 +28,12 @@ const blockStyle = css`
   will-change: transform;
 `;
 
-
-
 const PageTransition = ({ children }) => {
   const router = useHistory();
   const location = useLocation();
   const pathname = location.pathname;
 
   const overlayRef = useRef(null);
-  const logoOverlayRef = useRef(null);
 
   const blocksRef = useRef([]);
   const isTransitioning = useRef(false);
@@ -47,6 +45,8 @@ const PageTransition = ({ children }) => {
 
   const coverPage = useCallback(
     (url) => {
+      document.body.style.overflow = "hidden"; // prevent scrolling during transition
+
       const tl = gsap.timeline({
         onComplete: () => {
           window.scrollTo(0, 0);
@@ -66,6 +66,8 @@ const PageTransition = ({ children }) => {
   );
 
   const revealPage = useCallback(() => {
+    document.body.style.overflow = "hidden"; // prevent scrolling during transition
+
     gsap.set(blocksRef.current, { scaleX: 1, transformOrigin: "right" });
 
     gsap.to(blocksRef.current, {
@@ -76,11 +78,15 @@ const PageTransition = ({ children }) => {
       transformOrigin: "right",
       onComplete: () => {
         isTransitioning.current = false;
+
+        document.body.style.overflow = ""; // re-enable scrolling after transition
+
+        ScrollTrigger.refresh();
       },
     });
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (isInitialMount.current) {
       gsap.set(blocksRef.current, { scaleX: 0, transformOrigin: "left" });
     }
@@ -116,7 +122,7 @@ const PageTransition = ({ children }) => {
     };
   }, [coverPage, pathname]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (isInitialMount.current) {
       isInitialMount.current = false;
       return;
@@ -128,10 +134,7 @@ const PageTransition = ({ children }) => {
 
   return (
     <>
-      <div
-        css={overlayStyle}
-        ref={overlayRef}
-      >
+      <div css={overlayStyle} ref={overlayRef}>
         {blocks.map((_, index) => (
           <div
             key={index}

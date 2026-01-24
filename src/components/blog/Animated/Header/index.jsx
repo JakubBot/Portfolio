@@ -66,6 +66,7 @@ const Header = ({
             trigger: containerRef.current,
             start: "top bottom-=12%",
             toggleActions: "play none none reverse",
+            markers: true,
           },
 
           yPercent: 0,

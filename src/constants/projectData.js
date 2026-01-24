@@ -18,7 +18,11 @@ const projectData = {
     category: "Research",
     timeRead: 6,
     videoHorizontal: RagVideoHorizontal,
+    horizontalDimensions: "1272 / 630",
+
     videoVertical: RagVideoVertical,
+    verticalDimensions: "404 / 800",
+
     githubLink: "https://github.com/PGRRT/java-rag",
   },
   linear_equations: {
@@ -26,8 +30,12 @@ const projectData = {
     tags: ["Mathematical Algorithms", "Problem Solving", "Educational Tool"],
     category: "Education",
     timeRead: 5,
-    videoHorizontal: null,
+    // videoHorizontal: null,
+    videoHorizontal: BackgammonVideo,
+    horizontalDimensions: "1286 / 820",
+
     videoVertical: null,
+
     githubLink: "https://github.com/JakubBot/linear_equations",
   },
   backgammon: {
@@ -36,8 +44,12 @@ const projectData = {
     tags: ["Rule Engine", "Local Multiplayer", "Hall of Fame"],
     category: "Game",
     timeRead: 3,
+
     videoHorizontal: BackgammonVideo,
-    videoVertical: null,
+    horizontalDimensions: "1286 / 820",
+
+
+    // videoVertical: null,
     githubLink: "https://github.com/JakubBot/BackGammon",
   },
   chess: {

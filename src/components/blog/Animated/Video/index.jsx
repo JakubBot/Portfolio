@@ -5,16 +5,25 @@ import { useRef } from "react";
 import gsap from "gsap";
 import useViewport from "../../../../hooks/useViewport";
 import { css } from "@emotion/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const viewportMaxWidthForVerticalVideo = 550;
-const Video = ({ videoHorizontal, videoVertical }) => {
+const Video = ({
+  videoHorizontal,
+  videoVertical,
+  horizontalDimensions,
+  verticalDimensions,
+}) => {
   const player = useRef(null);
   const { width } = useViewport();
 
-  const videoSrc =
-    width < viewportMaxWidthForVerticalVideo && videoVertical
-      ? videoVertical
-      : videoHorizontal;
+  const isVertical = width < viewportMaxWidthForVerticalVideo && videoVertical;
+  const videoSrc = isVertical ? videoVertical : videoHorizontal;
+
+  const defaultRatio = isVertical ? "9 / 16" : "16 / 9";
+  const aspectRatio = isVertical
+    ? verticalDimensions || defaultRatio
+    : horizontalDimensions || defaultRatio;
 
   useEffect(() => {
     if (player.current) {
@@ -23,17 +32,45 @@ const Video = ({ videoHorizontal, videoVertical }) => {
         duration: 1,
         ease: "power4.inOut",
         clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-        delay: 0.5,
         onComplete: () => {
           window.dispatchEvent(new Event("resize"));
+          ScrollTrigger.refresh();
         },
       });
     }
   }, []);
 
+  if (!videoSrc) return null;
+
   return (
     <>
       <div
+        ref={player}
+        css={css`
+          position: relative;
+          width: 100%;
+          max-width: 900px;
+          margin: 0 auto;
+
+          aspect-ratio: ${aspectRatio};
+
+          background-color: #111;
+          border-radius: 5px;
+
+          top: -25px;
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        `}
+      >
+        <ReactPlayer
+          controls={true}
+          url={videoSrc}
+          loop={true}
+          width="100%"
+          height="100%"
+          style={{ position: "absolute", top: 0, left: 0 }}
+        />
+      </div>
+      {/* <div
         ref={player}
         css={css`
           clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
@@ -52,9 +89,10 @@ const Video = ({ videoHorizontal, videoVertical }) => {
           url={videoSrc}
           loop={true}
           width={900}
-          height="auto"
+          height={550}
+          // height="auto"
         />
-      </div>
+      </div> */}
     </>
   );
 };

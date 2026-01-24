@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { css } from "@emotion/react";
 import { useParams } from "react-router-dom";
 import NavBar from "../../components/blog/Navbar";
@@ -16,6 +16,8 @@ const Projects = () => {
   const { id } = useParams();
 
   const project = projectData[id];
+
+
 
   if (!project) {
     return (
@@ -50,7 +52,6 @@ const Projects = () => {
     >
       <NavBar category={category} timeRead={timeRead} />
       <ProjectContent projectId={id} />
-     
     </div>
   );
 };

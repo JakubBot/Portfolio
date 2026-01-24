@@ -1,5 +1,6 @@
 import React from "react";
 import { css } from "@emotion/react";
+import { useHistory } from "react-router-dom";
 import AnimatedHeader from "../Animated/Header";
 import Video from "../Animated/Video";
 import Backgammon from "../Description/Backgammon";
@@ -10,32 +11,44 @@ import projectData from "../../../constants/projectData";
 import IconWrapper from "../../common/IconWrapper";
 import LinkComponent from "../../common/LinkComponent";
 import { colorPalette } from "../../../constants/colorPalette";
-import { FaGithub, FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+
+const navButtonStyle = css`
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  font-size: ${typographyValues.textL.fontSize}rem;
+  font-weight: bold;
+  color: ${colorPalette.text};
+  transition: transform 0.3s ease;
+`;
 
 const ProjectContent = ({ projectId }) => {
   const project = projectData[projectId];
 
-  const { header, videoHorizontal, videoVertical, tags, githubLink } =
-    project ?? {};
+  const {
+    header,
+    videoHorizontal,
+    videoVertical,
+    tags,
+    githubLink,
+    horizontalDimensions,
+    verticalDimensions,
+  } = project ?? {};
 
-  const handleNext = () => {};
+  const projectKeys = Object.keys(projectData);
+  const currentIndex = projectKeys.indexOf(projectId);
+  const hasNext = currentIndex < projectKeys.length - 1;
+  const hasPrev = currentIndex > 0;
 
-  const handlePrev = () => {};
-
-  const navButtonStyle = css`
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    cursor: pointer;
-    font-size: ${typographyValues.textL.fontSize}rem;
-    font-weight: bold;
-    color: ${colorPalette.text};
-    transition: transform 0.3s ease;
-  `;
+  const nextId = hasNext ? projectKeys[currentIndex + 1] : null;
+  const prevId = hasPrev ? projectKeys[currentIndex - 1] : null;
 
   return (
     <>
       <div
+        key={projectId}
         css={css`
           display: flex;
           flex-direction: column;
@@ -68,7 +81,9 @@ const ProjectContent = ({ projectId }) => {
 
         <Video
           videoHorizontal={videoHorizontal}
+          horizontalDimensions={horizontalDimensions}
           videoVertical={videoVertical}
+          verticalDimensions={verticalDimensions}
         />
 
         <Divider />
@@ -122,35 +137,42 @@ const ProjectContent = ({ projectId }) => {
               width: 100%;
             `}
           >
-            <div
-              onClick={handlePrev}
-              css={[
-                navButtonStyle,
-                css`
-                  &:hover {
-                    transform: translateX(-5px);
-                  }
-                `,
-              ]}
-            >
-              <IconWrapper Icon={FaArrowLeft} size={20} />
-              <span>Prev</span>
-            </div>
+            <LinkComponent href={`/projects/${prevId}`} disabled={!hasPrev}>
+              <div
+                css={[
+                  navButtonStyle,
+                  css`
+                    &:hover {
+                      transform: translateX(-5px);
+                    }
+                    ${!hasPrev &&
+                    `
+                    opacity: 0.5;
+                    pointer-events: none;
+                  `}
+                  `,
+                ]}
+              >
+                <IconWrapper Icon={FaArrowLeft} size={20} />
+                <span>Prev</span>
+              </div>
+            </LinkComponent>
 
-            <div
-              onClick={handleNext}
-              css={[
-                navButtonStyle,
-                css`
-                  &:hover {
-                    transform: translateX(5px);
-                  }
-                `,
-              ]}
-            >
-              <span>Next</span>
-              <IconWrapper Icon={FaArrowRight} size={20} />
-            </div>
+            <LinkComponent href={`/projects/${nextId}`} disabled={!hasNext}>
+              <div
+                css={[
+                  navButtonStyle,
+                  css`
+                    &:hover {
+                      transform: translateX(5px);
+                    }
+                  `,
+                ]}
+              >
+                <span>Next</span>
+                <IconWrapper Icon={FaArrowRight} size={20} />
+              </div>
+            </LinkComponent>
           </div>
         </div>
       </div>
