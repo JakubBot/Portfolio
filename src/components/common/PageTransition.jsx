@@ -1,9 +1,33 @@
 import React from "react";
-import Logo from "./Logo";
 import { useHistory, useLocation } from "react-router-dom";
 import { useRef } from "react";
 import { useEffect, useCallback } from "react";
 import gsap from "gsap";
+import { css } from "@emotion/react";
+import { useLayoutEffect } from "react";
+
+const overlayStyle = css`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  display: flex;
+  pointer-events: none;
+  z-index: 2;
+`;
+
+const blockStyle = css`
+  flex: 1;
+  height: 100%;
+  background-color: #222;
+  transform: scaleX(0);
+  transform-origin: left;
+
+  will-change: transform;
+`;
+
+
 
 const PageTransition = ({ children }) => {
   const router = useHistory();
@@ -12,15 +36,22 @@ const PageTransition = ({ children }) => {
 
   const overlayRef = useRef(null);
   const logoOverlayRef = useRef(null);
-  const logoRef = useRef(null);
+
   const blocksRef = useRef([]);
   const isTransitioning = useRef(false);
   const isInitialMount = useRef(true);
 
+  const addToRefs = (el, index) => {
+    blocksRef.current[index] = el;
+  };
+
   const coverPage = useCallback(
     (url) => {
       const tl = gsap.timeline({
-        onComplete: () => router.push(url),
+        onComplete: () => {
+          window.scrollTo(0, 0);
+          router.push(url);
+        },
       });
 
       tl.to(blocksRef.current, {
@@ -30,40 +61,6 @@ const PageTransition = ({ children }) => {
         ease: "power2.out",
         transformOrigin: "left",
       });
-      // .set(logoOverlayRef.current, { opacity: 1 }, "-=0.2")
-      // .set(
-      //   logoRef.current.querySelector("path"),
-      //   {
-      //     strokeDashoffset: logoRef.current
-      //       .querySelector("path")
-      //       .getTotalLength(),
-      //     fill: "transparent",
-      //   },
-      //   "-=0.25",
-      // )
-      // .to(
-      //   logoRef.current.querySelector("path"),
-      //   {
-      //     strokeDashoffset: 0,
-      //     duration: 1.6,
-      //     ease: "power2.inOut",
-      //   },
-      //   "-=0.5",
-      // )
-      // .to(
-      //   logoRef.current.querySelector("path"),
-      //   {
-      //     fill: "#e3e4d8",
-      //     duration: 0.8,
-      //     ease: "power2.out",
-      //   },
-      //   "-=0.2",
-      // )
-      // .to(logoOverlayRef.current, {
-      //   opacity: 0,
-      //   duration: 0.25,
-      //   ease: "power2.out",
-      // });
     },
     [router],
   );
@@ -79,40 +76,13 @@ const PageTransition = ({ children }) => {
       transformOrigin: "right",
       onComplete: () => {
         isTransitioning.current = false;
-
-        window.scrollTo(0, 0);
       },
     });
   }, []);
 
   useEffect(() => {
-    const createBlocks = () => {
-      if (!overlayRef.current) return;
-      overlayRef.current.innerHTML = "";
-      blocksRef.current = [];
-
-      for (let i = 0; i < 20; i++) {
-        const block = document.createElement("div");
-        block.className = "block";
-        overlayRef.current.appendChild(block);
-        blocksRef.current.push(block);
-      }
-    };
-
-    createBlocks();
-
-    gsap.set(blocksRef.current, { scaleX: 0, transformOrigin: "left" });
-
-    if (logoRef.current) {
-      const path = logoRef.current.querySelector("path");
-      if (path) {
-        const length = path.getTotalLength();
-        gsap.set(path, {
-          strokeDasharray: length,
-          strokeDashoffset: length,
-          fill: "transparent",
-        });
-      }
+    if (isInitialMount.current) {
+      gsap.set(blocksRef.current, { scaleX: 0, transformOrigin: "left" });
     }
 
     const handleRouteChange = (url) => {
@@ -154,13 +124,21 @@ const PageTransition = ({ children }) => {
     revealPage();
   }, [pathname, revealPage]);
 
+  const blocks = new Array(20).fill(null);
+
   return (
     <>
-      <div className="transition-overlay" ref={overlayRef}></div>
-      <div className="logo-overlay" ref={logoOverlayRef}>
-        <div className="logo-container">
-          <Logo ref={logoRef} />
-        </div>
+      <div
+        css={overlayStyle}
+        ref={overlayRef}
+      >
+        {blocks.map((_, index) => (
+          <div
+            key={index}
+            css={blockStyle}
+            ref={(el) => addToRefs(el, index)}
+          />
+        ))}
       </div>
 
       {children}

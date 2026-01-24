@@ -2,6 +2,7 @@ import React from "react";
 import { css } from "@emotion/react";
 import Header from "../Animated/Header";
 import { typographyValues } from "../../../constants/typography";
+import RenderSection from "./RenderSection";
 
 const projectContent = [
   {
@@ -32,16 +33,17 @@ const projectContent = [
 
 const Backgammon = () => {
   return (
-    <div
-      css={css`
-        display: flex;
-        flex-direction: column;
-        gap: 3rem;
-      `}
-    >
+    <>
       {projectContent.map((section, index) => (
+        <RenderSection
+          title={section.title}
+          paragraphs={section.paragraphs}
+          key={index}
+        />
+      ))}
+      {/* {projectContent.map((section, index) => (
         <div
-          key={index} // W real world lepiej użyć unikalnego ID, ale tutaj index wystarczy
+          key={index}
           css={css`
             display: flex;
             flex-direction: column;
@@ -71,16 +73,8 @@ const Backgammon = () => {
             ))}
           </div>
         </div>
-      ))}
-
-      {/* Move Validation: Writing logic to handle "doubles" (4 moves instead of 2) and ensuring every jump follows the strict rules of the game. */}
-
-      {/* Persistent Systems: Building a Hall of Fame using file I/O to track player scores across sessions. */}
-
-      {/* The Replay Engine: Designing a way to log moves so players can step back through their history-essentially turning a flat text file into a "game time machine." */}
-
-      {/* This project taught me that "simple" games require rigorous logic and taught me how to structure a large C codebase using modular headers and source files. */}
-    </div>
+      ))} */}
+    </>
   );
 };
 

@@ -10,6 +10,7 @@ const projectData = {
     timeRead: 4,
     videoHorizontal: null,
     videoVertical: null,
+    githubLink: null,
   },
   rag: {
     header: "Rag Research Project",
@@ -18,6 +19,7 @@ const projectData = {
     timeRead: 6,
     videoHorizontal: RagVideoHorizontal,
     videoVertical: RagVideoVertical,
+    githubLink: "https://github.com/PGRRT/java-rag",
   },
   linear_equations: {
     header: "Linear Equations Solver",
@@ -26,6 +28,7 @@ const projectData = {
     timeRead: 5,
     videoHorizontal: null,
     videoVertical: null,
+    githubLink: "https://github.com/JakubBot/linear_equations",
   },
   backgammon: {
     header: "Backgammon CLI",
@@ -33,9 +36,9 @@ const projectData = {
     tags: ["Rule Engine", "Local Multiplayer", "Hall of Fame"],
     category: "Game",
     timeRead: 3,
-    githubLink: "",
     videoHorizontal: BackgammonVideo,
     videoVertical: null,
+    githubLink: "https://github.com/JakubBot/BackGammon",
   },
   chess: {
     header: "Chess Game",
@@ -44,6 +47,7 @@ const projectData = {
     timeRead: 4,
     videoHorizontal: null,
     videoVertical: null,
+    githubLink: "https://github.com/JakubBot/Chess-Game",
   },
 };
 

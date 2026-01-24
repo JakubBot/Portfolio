@@ -6,76 +6,122 @@ import { useEffect } from "react";
 import { typography } from "../../../../constants/typography";
 import { colorPalette } from "../../../../constants/colorPalette";
 import useViewport from "../../../../hooks/useViewport";
+import { useMemo } from "react";
+
+const wordWrapperStyle = css`
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: top;
+`;
+
+const charStyle = css`
+  display: inline-block;
+  color: ${colorPalette.textHeader};
+  will-change: transform, opacity;
+  opacity: 0;
+`;
 
 const Header = ({
   text,
   fontSize,
-  delay,
-  stagger = 0.03,
+  stagger = 0.03, // if set to 0, it renders all at once
   mobileSize,
   textBold = true,
+  children,
 }) => {
   const containerRef = useRef(null);
   const { isMobile } = useViewport();
 
   const currentFont = isMobile && mobileSize ? mobileSize : fontSize;
 
+  const dynamicStyles = useMemo(() => {
+    return {
+      word: css`
+        margin-right: ${currentFont / 4}rem;
+      `,
+      char: css`
+        font-size: ${currentFont}rem;
+      `,
+      bold: textBold ? typography.textBold : undefined,
+    };
+  }, [currentFont, textBold]);
+
   useEffect(() => {
-    const chars = containerRef.current.querySelectorAll(".animated__char");
+    let anim;
 
-    const anim = gsap.from(chars, {
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top bottom-=15%",
-        toggleActions: "play none none reverse",
-      },
+    const rafId = requestAnimationFrame(() => {
+      if (!containerRef.current) return;
 
-      yPercent: 110,
-      opacity: 0,
-      duration: 1,
-      ease: "power4.out",
-      stagger: stagger,
-      delay: delay,
+      const chars = containerRef.current.querySelectorAll(".animated");
+
+      anim = gsap.fromTo(
+        chars,
+        {
+          yPercent: 110,
+          opacity: 0,
+        },
+        {
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top bottom-=12%",
+            toggleActions: "play none none reverse",
+          },
+
+          yPercent: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power4.out",
+          stagger: stagger,
+          onComplete: () => {
+            gsap.set(chars, { clearProps: "willChange" });
+          },
+        },
+      );
     });
 
     return () => {
-      anim.kill();
+      if (rafId) cancelAnimationFrame(rafId);
+      if (anim) anim.kill();
     };
-  }, [delay, stagger]);
+  }, [stagger]);
 
-  const words = text?.split(" ");
+  const words = useMemo(() => text?.split(" ") || [], [text]);
+  const renderAllAtOnce = stagger === 0;
 
   return (
     <div ref={containerRef}>
-      {words?.map((word, wordIndex) => (
+      {children ? (
         <span
-          key={wordIndex}
-          css={css`
-            display: inline-block;
-            white-space: nowrap;
-            margin-right: ${currentFont / 4}rem;
-            overflow: hidden;
-            vertical-align: top;
-          `}
+          className="animated"
+          css={[charStyle, dynamicStyles.char, dynamicStyles.bold]}
         >
-          {word.split("").map((char, charIndex) => (
-            <span
-              className="animated__char"
-              key={charIndex}
-              css={[
-                textBold && typography.textBold,
-                css`
-                  color: ${colorPalette.textHeader};
-                  font-size: ${currentFont}rem;
-                  display: inline-block;
-                `,
-              ]}
-            >
-              {char}
+          {children}
+        </span>
+      ) : renderAllAtOnce ? (
+        <span
+          className="animated"
+          css={[charStyle, dynamicStyles.char, dynamicStyles.bold]}
+        >
+          {text}
+        </span>
+      ) : (
+        <>
+          {words?.map((word, wordIndex) => (
+            <span key={wordIndex} css={[wordWrapperStyle, dynamicStyles.word]}>
+              {word.split("").map((char, charIndex) => (
+                <span
+                  className="animated"
+                  key={charIndex}
+                  css={[charStyle, dynamicStyles.char, dynamicStyles.bold]}
+                >
+                  {char}
+                </span>
+              ))}
             </span>
           ))}
-        </span>
-      ))}
+        </>
+      )}
     </div>
   );
 };

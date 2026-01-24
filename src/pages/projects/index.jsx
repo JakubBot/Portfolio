@@ -44,6 +44,8 @@ const Projects = () => {
         align-items: center;
 
         color: ${colorPalette.text};
+
+        padding-bottom: 20px; // make sure there's space at the bottom
       `}
     >
       <NavBar category={category} timeRead={timeRead} />

@@ -7,16 +7,31 @@ import Divider from "../../common/Divider";
 import { RenderTags } from "../../common/Tag";
 import { typographyValues } from "../../../constants/typography";
 import projectData from "../../../constants/projectData";
+import IconWrapper from "../../common/IconWrapper";
+import LinkComponent from "../../common/LinkComponent";
+import { colorPalette } from "../../../constants/colorPalette";
+import { FaGithub, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const ProjectContent = ({ projectId }) => {
   const project = projectData[projectId];
 
-  const {
-    header,
-    videoHorizontal,
-    videoVertical,
-    tags,
-  } = project ?? {};
+  const { header, videoHorizontal, videoVertical, tags, githubLink } =
+    project ?? {};
+
+  const handleNext = () => {};
+
+  const handlePrev = () => {};
+
+  const navButtonStyle = css`
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    font-size: ${typographyValues.textL.fontSize}rem;
+    font-weight: bold;
+    color: ${colorPalette.text};
+    transition: transform 0.3s ease;
+  `;
 
   return (
     <>
@@ -44,7 +59,6 @@ const ProjectContent = ({ projectId }) => {
           <AnimatedHeader
             text={header}
             fontSize={typographyValues.textTitle.fontSize}
-            delay={0.5}
             stagger={0.03}
             mobileSize={typographyValues.textXxl.fontSize}
           />
@@ -58,11 +72,87 @@ const ProjectContent = ({ projectId }) => {
         />
 
         <Divider />
+        <div
+          css={css`
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            gap: 3.5rem;
+          `}
+        >
+          <Backgammon />
 
+          <div
+            css={css`
+              display: flex;
+              flex-direction: column;
+              gap: 1rem;
+            `}
+          >
+            <AnimatedHeader
+              text={"Project Link"}
+              fontSize={typographyValues.textSectionHeader.fontSize}
+              stagger={0}
+            />
 
-        <Backgammon />
+            <AnimatedHeader
+              stagger={0}
+              fontSize={typographyValues.textL.fontSize}
+              textBold={false}
+            >
+              You can check out the full source code of this project on{" "}
+              <LinkComponent href={githubLink}>
+                <span
+                  css={css`
+                    text-decoration: underline;
+                    font-weight: bold;
+                  `}
+                >
+                  GitHub
+                </span>
+              </LinkComponent>
+            </AnimatedHeader>
+          </div>
 
-        <h4>tutaj Next i prev, i gh links</h4>
+          <div
+            css={css`
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              width: 100%;
+            `}
+          >
+            <div
+              onClick={handlePrev}
+              css={[
+                navButtonStyle,
+                css`
+                  &:hover {
+                    transform: translateX(-5px);
+                  }
+                `,
+              ]}
+            >
+              <IconWrapper Icon={FaArrowLeft} size={20} />
+              <span>Prev</span>
+            </div>
+
+            <div
+              onClick={handleNext}
+              css={[
+                navButtonStyle,
+                css`
+                  &:hover {
+                    transform: translateX(5px);
+                  }
+                `,
+              ]}
+            >
+              <span>Next</span>
+              <IconWrapper Icon={FaArrowRight} size={20} />
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
