@@ -24,6 +24,11 @@ const navButtonStyle = css`
   transition: transform 0.3s ease;
 `;
 
+const underlineBoldStyle = css`
+  text-decoration: underline;
+  font-weight: bold;
+`;
+
 const ProjectContent = ({ projectId }) => {
   const project = projectData[projectId];
 
@@ -37,6 +42,9 @@ const ProjectContent = ({ projectId }) => {
     verticalDimensions,
     downloadLink,
     maxMediaWidth,
+
+    documentationLink,
+    documentationLinkTools, // used for aeropage project
   } = project ?? {};
 
   const projectKeys = Object.keys(projectData);
@@ -46,6 +54,9 @@ const ProjectContent = ({ projectId }) => {
 
   const nextId = hasNext ? projectKeys[currentIndex + 1] : null;
   const prevId = hasPrev ? projectKeys[currentIndex - 1] : null;
+
+  console.log("githubLink", githubLink);
+  console.log("downloadLink", downloadLink);
 
   return (
     <>
@@ -86,7 +97,6 @@ const ProjectContent = ({ projectId }) => {
           mediaVertical={videoVertical}
           horizontalDimensions={horizontalDimensions}
           verticalDimensions={verticalDimensions}
-
           maxMediaWidth={maxMediaWidth}
         />
 
@@ -110,48 +120,82 @@ const ProjectContent = ({ projectId }) => {
               gap: 1rem;
             `}
           >
-            <AnimatedHeader
-              text={"Project Link"}
-              fontSize={typographyValues.textSectionHeader.fontSize}
-              stagger={0}
-            />
+            {documentationLink && (
+              <>
+                <AnimatedHeader
+                  text={"Project Documentation"}
+                  fontSize={typographyValues.textSectionHeader.fontSize}
+                  stagger={0}
+                />
 
-            <AnimatedHeader
-              stagger={0}
-              fontSize={typographyValues.textL.fontSize}
-              textBold={false}
-            >
-              <span>
-                You can check out the full source code of this project on{" "}
-                <LinkComponent href={githubLink}>
-                  <span
-                    css={css`
-                      text-decoration: underline;
-                      font-weight: bold;
-                    `}
-                  >
-                    GitHub
+                <AnimatedHeader
+                  stagger={0}
+                  fontSize={typographyValues.textL.fontSize}
+                  textBold={false}
+                >
+                  <span>
+                    While the general documentation is available{" "}
+                    <LinkComponent href={documentationLink}>
+                      <span css={underlineBoldStyle}>here</span>
+                    </LinkComponent>
+                    
+
+                    {!documentationLinkTools ? "." : ""} 
                   </span>
-                </LinkComponent>
-                .
-              </span>
-              {downloadLink && (
-                <span>
-                  {" "}
-                  You can also download the documentation{" "}
-                  <a
-                    href={downloadLink}
-                    download="Linear_Equations.pdf"
-                    css={css`
-                      text-decoration: underline;
-                      font-weight: bold;
-                    `}
-                  >
-                    here.
-                  </a>
-                </span>
-              )}
-            </AnimatedHeader>
+
+                  {documentationLinkTools && (
+                    <span>
+                      {", "}
+                     I have personally authored the entire technical guide for the Dynamic Tools and APIs section, which you can find{" "}
+                      <LinkComponent href={documentationLinkTools}>
+                        <span css={underlineBoldStyle}>here</span>
+                      </LinkComponent>
+                      .
+                    </span>
+                  )}
+                </AnimatedHeader>
+              </>
+            )}
+
+            {(githubLink || downloadLink) && (
+              <>
+                <AnimatedHeader
+                  text={"Project Link"}
+                  fontSize={typographyValues.textSectionHeader.fontSize}
+                  stagger={0}
+                />
+
+                <AnimatedHeader
+                  stagger={0}
+                  fontSize={typographyValues.textL.fontSize}
+                  textBold={false}
+                >
+                  {githubLink && (
+                    <span>
+                      You can check out the full source code of this project on{" "}
+                      <LinkComponent href={githubLink}>
+                        <span css={underlineBoldStyle}>GitHub</span>
+                      </LinkComponent>
+                      .
+                    </span>
+                  )}
+
+                  {downloadLink && (
+                    <span>
+                      {" "}
+                      You can also download the documentation{" "}
+                      <a
+                        href={downloadLink}
+                        download="Linear_Equations.pdf"
+                        css={underlineBoldStyle}
+                      >
+                        here.
+                      </a>
+                    </span>
+                  )}
+                </AnimatedHeader>
+              </>
+            )}
           </div>
 
           <div

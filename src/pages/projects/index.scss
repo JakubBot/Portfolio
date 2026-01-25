@@ -1,17 +1,17 @@
 @import "../../assets/styles/style.scss";
 
 html {
-  font-size: 86.5%;
+  font-size: 80%;
 
   -webkit-text-size-adjust: 100%;
   line-height: 1.5;
 
   @include tablet {
-    font-size: 93.75%;
+    font-size: 90%;
   }
 
   @include sDesktop {
-    font-size: 93.75%;
+    font-size: 95%;
   }
 
   @include lDesktop {

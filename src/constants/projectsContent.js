@@ -1,5 +1,48 @@
 export const projectContent = {
-  aeropage: [],
+  aeropage: [
+    {
+      title: "Product Overview",
+      paragraphs: [
+        "Aeropage is a SaaS platform that enables users to build websites, client portals, and business tools using Airtable as a primary database. It bridges the gap between raw data and functional interfaces, offering a suite of 'Dynamic Tools' that automate content generation and third-party integrations.",
+        "The ecosystem includes a visual builder, a robust WordPress sync engine, and specialized APIs designed to transform database records into actionable business assets like PDFs, emails, and QR codes.",
+      ],
+    },
+    {
+      title: "My Role & Backend Engineering",
+      paragraphs: [
+        "During my 2.5-year tenure, I evolved into a core developer responsible for both the main builder's stability and the development of the entire 'Aeropage Tools' suite. I architected the backend logic using Next.js, AWS Amplify, and XState to handle complex data flows and asynchronous operations.",
+        "My work went beyond feature development; I managed the core infrastructure, ensuring that the platform could handle the data demands of over 10,000 users while maintaining high performance and data consistency across multiple external APIs.",
+      ],
+    },
+    {
+      title: "Core Tools & Development",
+      paragraphs: [
+        "I engineered a variety of backend-driven tools, including the Dynamic HTML Email builder for responsive automated content, the Document/PDF Maker for on-the-fly invoice generation, and specialized connectors for OpenAI and Stripe. I also built the Permanent Attachments system to solve Airtable's expiring link issue, the Notion HTML API for content rendering, and much more. Detailed technical breakdowns of these and other features can be found in the official documentation link below.",
+        "A major highlight of my work was leading the development of the WordPress Sync Plugin, which achieved significant market success with over 8,000 active installations. I engineered a high-performance synchronization engine that maps Airtable records directly to WordPress Custom Post Types (CPT), enabling businesses to manage large-scale CMS content efficiently.",
+      ],
+    },
+    {
+      title: "Technical Achievements & Cost Optimization",
+      paragraphs: [
+        "One of my biggest achievements was significantly reducing API operational costs as our user base grew to 10k. I achieved this by rewriting core data methods to prioritize aggressive caching and implementing bulk operations.",
+        "By batching updates and optimizing how we interacted with the Airtable API, we managed to scale our user count tenfold without a proportional increase in infrastructure or API expenses. This efficiency, combined with high system reliability, resulted in overwhelmingly positive feedback from our professional user base.",
+      ],
+    },
+    {
+      title: "Community & Support",
+      paragraphs: [
+        "I was deeply involved with our community, directly managing technical support tickets and bug reports. This hands-on approach allowed me to identify edge cases in real-time and push hotfixes that improved the platform for everyone.",
+        "Communicating directly with users helped me bridge the gap between technical requirements and user expectations, ensuring that new features were built to solve actual pain points.",
+      ],
+    },
+    {
+      title: "What I Learned",
+      paragraphs: [
+        "Working in a collaborative environment for 2.5 years taught me the importance of technical communication and attention to detail. I learned to look beyond the 'how' of a feature and always ask 'why' to ensure we were building the most efficient solution for the end-user.",
+        "This role refined my ability to manage complex projects from conception to deployment, teaching me how to balance rapid feature development with the long-term maintenance required for a high-traffic SaaS product.",
+      ],
+    },
+  ],
   rag: [],
 
   linear_equations: [

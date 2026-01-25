@@ -76,12 +76,15 @@ const MediaViewer = ({
         max-width: ${maxMediaWidth || 1000}px;
         margin: 0 auto;
         aspect-ratio: ${aspectRatio};
-        background-color: #111;
+        background-color: transparent;
         border-radius: 5px;
 
         top: -25px;
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
         overflow: hidden;
+
+        background-color: white;
+        border-radius: 5px;
       `}
     >
       {isPdf ? (
@@ -95,6 +98,9 @@ const MediaViewer = ({
             top: 0;
             left: 0;
             border: none;
+
+            background-color: white;
+            display: block;
           `}
         >
           <p style={{ color: "white", padding: "20px", textAlign: "center" }}>

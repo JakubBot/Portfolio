@@ -2,12 +2,15 @@ import { css } from "@emotion/react";
 import React from "react";
 import { typography } from "../../../constants/typography";
 import { colorPalette } from "../../../constants/colorPalette";
+import useViewport from "../../../hooks/useViewport";
 
 const Tag = ({ text }) => {
+  const { isTabletOrSmaller } = useViewport();
+
   return (
     <span
       css={[
-        typography.textS,
+        isTabletOrSmaller ? typography.textXs : typography.textS,
         css`
           display: inline-block;
           padding: 0.5rem 1rem;
