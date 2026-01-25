@@ -1,6 +1,7 @@
 import BackgammonVideo from "../assets/videos/backgammon.mp4";
 import RagVideoHorizontal from "../assets/videos/rag_horizontal.mp4";
 import RagVideoVertical from "../assets/videos/rag_vertical.mp4";
+import Linear_Equations from "../assets/docs/linear_equations.pdf";
 
 const projectData = {
   aeropage: {
@@ -27,16 +28,19 @@ const projectData = {
   },
   linear_equations: {
     header: "Linear Equations Solver",
-    tags: ["Mathematical Algorithms", "Problem Solving", "Educational Tool"],
+    tags: ["Numerical Analysis", "Vectorized Computing", "LU Decomposition", "Performance Benchmarking"],
     category: "Education",
     timeRead: 5,
-    // videoHorizontal: null,
-    videoHorizontal: BackgammonVideo,
-    horizontalDimensions: "1286 / 820",
+
+    videoHorizontal: Linear_Equations,
+    horizontalDimensions: "1 / 1.38",
 
     videoVertical: null,
 
+    maxMediaWidth: 850,
+
     githubLink: "https://github.com/JakubBot/linear_equations",
+    downloadLink: Linear_Equations
   },
   backgammon: {
     header: "Backgammon CLI",

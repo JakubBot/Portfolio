@@ -17,8 +17,6 @@ const Projects = () => {
 
   const project = projectData[id];
 
-
-
   if (!project) {
     return (
       <div

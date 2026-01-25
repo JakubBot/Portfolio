@@ -29,11 +29,12 @@ const Home = () => {
     );
   }, []);
 
+
   return (
     <>
       <Navbar />
       <div className="background__wrapper">
-        <Marquee />
+        {/* <Marquee /> */}
         {/* <Work /> */}
         <Projects />
         <AboutMe />

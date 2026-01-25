@@ -2,8 +2,8 @@ import React from "react";
 import { css } from "@emotion/react";
 import { useHistory } from "react-router-dom";
 import AnimatedHeader from "../Animated/Header";
-import Video from "../Animated/Video";
-import Backgammon from "../Description/Backgammon";
+import MediaViewer from "../Animated/MediaViewer";
+import Description from "../Description";
 import Divider from "../../common/Divider";
 import { RenderTags } from "../../common/Tag";
 import { typographyValues } from "../../../constants/typography";
@@ -35,6 +35,8 @@ const ProjectContent = ({ projectId }) => {
     githubLink,
     horizontalDimensions,
     verticalDimensions,
+    downloadLink,
+    maxMediaWidth,
   } = project ?? {};
 
   const projectKeys = Object.keys(projectData);
@@ -79,23 +81,27 @@ const ProjectContent = ({ projectId }) => {
 
         <RenderTags tags={tags} />
 
-        <Video
-          videoHorizontal={videoHorizontal}
+        <MediaViewer
+          mediaHorizontal={videoHorizontal}
+          mediaVertical={videoVertical}
           horizontalDimensions={horizontalDimensions}
-          videoVertical={videoVertical}
           verticalDimensions={verticalDimensions}
+
+          maxMediaWidth={maxMediaWidth}
         />
 
         <Divider />
+
         <div
           css={css`
             display: flex;
             flex-direction: column;
             justify-content: left;
             gap: 3.5rem;
+            width: 100%;
           `}
         >
-          <Backgammon />
+          <Description id={projectId} />
 
           <div
             css={css`
@@ -115,17 +121,36 @@ const ProjectContent = ({ projectId }) => {
               fontSize={typographyValues.textL.fontSize}
               textBold={false}
             >
-              You can check out the full source code of this project on{" "}
-              <LinkComponent href={githubLink}>
-                <span
-                  css={css`
-                    text-decoration: underline;
-                    font-weight: bold;
-                  `}
-                >
-                  GitHub
+              <span>
+                You can check out the full source code of this project on{" "}
+                <LinkComponent href={githubLink}>
+                  <span
+                    css={css`
+                      text-decoration: underline;
+                      font-weight: bold;
+                    `}
+                  >
+                    GitHub
+                  </span>
+                </LinkComponent>
+                .
+              </span>
+              {downloadLink && (
+                <span>
+                  {" "}
+                  You can also download the documentation{" "}
+                  <a
+                    href={downloadLink}
+                    download="Linear_Equations.pdf"
+                    css={css`
+                      text-decoration: underline;
+                      font-weight: bold;
+                    `}
+                  >
+                    here.
+                  </a>
                 </span>
-              </LinkComponent>
+              )}
             </AnimatedHeader>
           </div>
 
