@@ -21,7 +21,7 @@ const overlayStyle = css`
 
 const blockStyle = css`
   flex: 1;
-  height: 100%;
+  height: 150vh;
   background-color: #222;
   transform: scaleX(0);
   transform-origin: left;

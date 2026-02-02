@@ -61,7 +61,9 @@ const projectData = {
     category: "Education",
     timeRead: 6,
 
-    videoHorizontal: Linear_Equations,
+    // videoHorizontal: "https://github.com/JakubBot/Portfolio/blob/master/src/assets/docs/linear_equations.pdf",
+    videoHorizontal: "https://jakubbot.github.io/Portfolio/static/media/linear_equations.4d802a47.pdf",
+    // videoHorizontal: Linear_Equations,
     horizontalDimensions: "1 / 1.38",
 
     videoVertical: null,

@@ -5,7 +5,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { css } from "@emotion/react";
 import useViewport from "../../../../hooks/useViewport";
 import isPdfFile from "../../../../utils/isPdfFile";
-import formatParams from "../../../../utils/formatParams";
 
 const viewportMaxWidthForVerticalVideo = 550;
 
@@ -16,9 +15,6 @@ const MediaViewer = ({
   verticalDimensions,
 
   maxMediaWidth,
-
-  fitHeightPdf = true,
-  hideToolbarPdf = true,
 }) => {
   const containerRef = useRef(null);
   const { width } = useViewport();
@@ -30,19 +26,13 @@ const MediaViewer = ({
 
   const isPdf = useMemo(() => isPdfFile(currentSource), [currentSource]);
 
-  const finalPdfUrl = useMemo(() => {
-    if (!isPdf || !currentSource) return currentSource;
+  const googleViewerUrl = useMemo(() => {
+    if (!isPdf || !currentSource) return "";
 
-    // Obiekt z opcjami - tu łatwo dodasz nowe
-    const options = {
-      view: fitHeightPdf ? "FitV" : "FitH", // FitH naprawia problem "oddalenia"
-      // zoom: 100,
-      toolbar: hideToolbarPdf ? 0 : 1,
-      navpanes: 0, // ukrywa boczne menu
-    };
-
-    return `${currentSource}${formatParams(options)}`;
-  }, [currentSource, isPdf, fitHeightPdf, hideToolbarPdf]);
+    return `https://docs.google.com/viewer?url=${encodeURIComponent(
+      currentSource,
+    )}&embedded=true`;
+  }, [currentSource, isPdf]);
 
   const defaultRatio = isUsingVerticalMedia || isPdf ? "3 / 4" : "16 / 9";
 
@@ -67,7 +57,6 @@ const MediaViewer = ({
 
   if (!currentSource) return null;
 
-  const urla = `https://docs.google.com/viewer?url=${encodeURIComponent(currentSource)}&embedded=true`
   return (
     <div
       ref={containerRef}
@@ -90,8 +79,7 @@ const MediaViewer = ({
     >
       {isPdf ? (
         <iframe
-          src={urla}
-          // src={finalPdfUrl}
+          src={googleViewerUrl}
           title="Document Viewer"
           width="100%"
           height="100%"

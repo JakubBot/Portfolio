@@ -56,8 +56,6 @@ const ProjectContent = ({ projectId }) => {
   const nextId = hasNext ? projectKeys[currentIndex + 1] : null;
   const prevId = hasPrev ? projectKeys[currentIndex - 1] : null;
 
-  console.log("githubLink", githubLink);
-  console.log("downloadLink", downloadLink);
 
   return (
     <>

@@ -5,39 +5,64 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+
+    <title>Jakub Bot | Fullstack Developer & Performance Engineer</title>
+
     <meta
       name="description"
       content="Jakub Bot - Fullstack Developer Portfolio. Minimal design, modern web development, React and Java projects and creative solutions."
     />
-    <meta name="keywords" content="Jakub Bot, fullstack developer, web & backend developer, React, JavaScript, Java, portfolio, minimal design" />
+    <meta
+      name="keywords"
+      content="Jakub Bot, Fullstack Developer, Java 25, Virtual Threads, Performance Engineering, Distributed Systems, Spring Boot, Next.js, gRPC, RabbitMQ, RAG Architecture, Redis Optimization, Software Engineer Poland"
+    />
     <meta name="author" content="Jakub Bot" />
-    <meta property="og:title" content="Jakub Bot - Fullstack Developer Portfolio" />
-    <meta property="og:description" content="Minimal design portfolio showcasing modern web development projects and creative solutions." />
+    <meta
+      property="og:title"
+      content="Jakub Bot - Fullstack Developer Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Building scalable distributed systems and high-efficiency backends. Commercial experience with 10,000+ user platforms and high-performance Java architectures."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://jakubbot.github.io/portfolio" />
     <meta property="og:image" content="%PUBLIC_URL%/favicon.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Jakub Bot - Fullstack Developer Portfolio" />
-    <meta name="twitter:description" content="Minimal design portfolio showcasing modern web development projects and creative solutions." />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <meta
+      name="twitter:title"
+      content="Jakub Bot - Fullstack Developer Portfolio"
+    />
+    <meta
+      name="twitter:description"
+      content="Specializing in Java 25, Distributed Systems, and Next.js. See my research on Virtual Threads and scalable RAG architectures."
+    />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.3.3/pixi.min.js"></script> -->
-    <title>Jakub Bot - Fullstack Developer Portfolio</title>
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <script type="text/javascript">
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+
+          var root = l.pathname === "/" ? "" : l.pathname.replace(/\/$/, "");
+
+          window.history.replaceState(null, null, root + decoded + l.hash);
+        }
+      })(window.location);
+    </script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app. This portfolio requires JavaScript to display interactive content and animations.</noscript>
+    <noscript
+      >You need to enable JavaScript to run this app. This portfolio requires
+      JavaScript to display interactive content and animations.</noscript
+    >
     <div id="root"></div>
     <!--
       This HTML file is a template.
