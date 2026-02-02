@@ -3,8 +3,8 @@
     "static/js/0.2b484893.chunk.js": "/Portfolio/static/js/0.2b484893.chunk.js",
     "static/js/0.2b484893.chunk.js.map": "/Portfolio/static/js/0.2b484893.chunk.js.map",
     "main.css": "/Portfolio/static/css/main.d4fb878c.chunk.css",
-    "main.js": "/Portfolio/static/js/main.b4bf2fd2.chunk.js",
-    "main.js.map": "/Portfolio/static/js/main.b4bf2fd2.chunk.js.map",
+    "main.js": "/Portfolio/static/js/main.907d7d5d.chunk.js",
+    "main.js.map": "/Portfolio/static/js/main.907d7d5d.chunk.js.map",
     "reactPlayerDailyMotion.js": "/Portfolio/static/js/reactPlayerDailyMotion.019a16da.chunk.js",
     "reactPlayerDailyMotion.js.map": "/Portfolio/static/js/reactPlayerDailyMotion.019a16da.chunk.js.map",
     "reactPlayerFacebook.js": "/Portfolio/static/js/reactPlayerFacebook.8bbb9dc6.chunk.js",
@@ -44,7 +44,7 @@
     "static/js/20.0fb9da84.chunk.js": "/Portfolio/static/js/20.0fb9da84.chunk.js",
     "static/js/20.0fb9da84.chunk.js.map": "/Portfolio/static/js/20.0fb9da84.chunk.js.map",
     "index.html": "/Portfolio/index.html",
-    "precache-manifest.fe6ecc43365ad51cbfacbbef72e6306c.js": "/Portfolio/precache-manifest.fe6ecc43365ad51cbfacbbef72e6306c.js",
+    "precache-manifest.1483c9b1b907288361fc4640eaa8a2ec.js": "/Portfolio/precache-manifest.1483c9b1b907288361fc4640eaa8a2ec.js",
     "service-worker.js": "/Portfolio/service-worker.js",
     "static/css/main.d4fb878c.chunk.css.map": "/Portfolio/static/css/main.d4fb878c.chunk.css.map",
     "static/js/0.2b484893.chunk.js.LICENSE.txt": "/Portfolio/static/js/0.2b484893.chunk.js.LICENSE.txt",
@@ -76,6 +76,6 @@
     "static/js/runtime-main.773a033c.js",
     "static/js/17.5caeb52b.chunk.js",
     "static/css/main.d4fb878c.chunk.css",
-    "static/js/main.b4bf2fd2.chunk.js"
+    "static/js/main.907d7d5d.chunk.js"
   ]
 }
