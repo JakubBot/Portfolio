@@ -141,5 +141,32 @@ export const projectContent = {
       ],
     },
   ],
-  chess: [],
+  chess: [
+    {
+      title: "Project Overview",
+      paragraphs: [
+        "This was one of my first major deep dives into building a full-scale web application. It’s a chess platform that supports both local play against a computer engine and real-time online multiplayer. The goal was to create a seamless, responsive experience where players could log in, find a match, and play without any page refreshes.",
+        "The project handles everything from move validation and game state management to user authentication and global chat, all bundled into a modern React-based interface.",
+      ],
+    },
+    {
+      title: "The Tech Stack: React, Redux & Firebase",
+      paragraphs: [
+        "To manage the complex state of a chess match—tracking moves, timers, and captured pieces—I utilized Redux with Redux-Thunk for asynchronous actions. This was crucial for handling the game's logic and ensuring that the UI stayed in sync with the underlying state.",
+        "The backend is powered by Firebase, which handles user authentication and real-time data synchronization. Using the Firebase Realtime Database allowed me to implement a multiplayer mode where moves are pushed to the opponent's screen instantly. I also integrated a global chat system using a similar event-driven approach, allowing players to communicate during games.",
+      ],
+    },
+    {
+      title: "Game Logic & AI Engine",
+      paragraphs: [
+        "For the core chess rules, I integrated 'chess.js' to handle move validation, castling, and checkmate detection. The 'Play vs Computer' mode uses 'js-chess-engine' to provide a challenging opponent for solo players. The visual board is rendered using a customized integration of 'chessboardjs', styled with Sass to give it a clean, professional look.",
+      ],
+    },
+    {
+      title: "Lessons Learned",
+      paragraphs: [
+        "Building this project was my first real lesson in handling complex state and real-time data sync. The biggest surprise was how much easier Redux DevTools made debugging—being able to 'time-travel' through moves to find where a state went wrong was a huge boost. It also taught me the importance of modular components; looking at the file structure now, I can see how creating dedicated containers for the 'GlobalChat' and 'OnlineGamePage' helped keep the logic manageable as a beginner. It was a great introduction to the 'event-driven' mindset that I still use in my bigger projects today."
+      ],
+    },
+  ],
 };

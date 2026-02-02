@@ -36,6 +36,7 @@ const ProjectContent = ({ projectId }) => {
     header,
     videoHorizontal,
     videoVertical,
+    hostUrl,
     tags,
     githubLink,
     horizontalDimensions,
@@ -139,15 +140,14 @@ const ProjectContent = ({ projectId }) => {
                     <LinkComponent href={documentationLink}>
                       <span css={underlineBoldStyle}>here</span>
                     </LinkComponent>
-                    
-
-                    {!documentationLinkTools ? "." : ""} 
+                    {!documentationLinkTools ? "." : ""}
                   </span>
 
                   {documentationLinkTools && (
                     <span>
-                      {", "}
-                     I have personally authored the entire technical guide for the Dynamic Tools and APIs section, which you can find{" "}
+                      {", "}I have personally authored the entire technical
+                      guide for the Dynamic Tools and APIs section, which you
+                      can find{" "}
                       <LinkComponent href={documentationLinkTools}>
                         <span css={underlineBoldStyle}>here</span>
                       </LinkComponent>
@@ -158,7 +158,7 @@ const ProjectContent = ({ projectId }) => {
               </>
             )}
 
-            {(githubLink || downloadLink) && (
+            {(githubLink || downloadLink || hostUrl) && (
               <>
                 <AnimatedHeader
                   text={"Project Link"}
@@ -188,6 +188,21 @@ const ProjectContent = ({ projectId }) => {
                       <a
                         href={downloadLink}
                         download="Linear_Equations.pdf"
+                        css={underlineBoldStyle}
+                      >
+                        here.
+                      </a>
+                    </span>
+                  )}
+
+                  {hostUrl && (
+                    <span>
+                      {" "}
+                      You can also play the game{" "}
+                      <a
+                        href={hostUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         css={underlineBoldStyle}
                       >
                         here.

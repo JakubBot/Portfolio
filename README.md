@@ -6,8 +6,6 @@
 Hi, I'am Jakub, I am a 4th-semester Computer Science student at the Gdańsk University of Technology with 2 years of commercial experience in Web Development.
 
 
-
-
 ## Projects 
 - [Chess Game](https://github.com/JakubBot/Chess-Game) - it's great chess app where you can play either computer or online, with login and points
 - [Shop App](https://github.com/JakubBot/Shopify) - app for ordering a food

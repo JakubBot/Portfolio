@@ -1,5 +1,6 @@
 import Aeropage from "../assets/videos/aeropage.mp4";
 import BackgammonVideo from "../assets/videos/backgammon.mp4";
+import ChessVideo from "../assets/videos/chess.mp4";
 import RagVideoHorizontal from "../assets/videos/rag_horizontal.mp4";
 import RagVideoVertical from "../assets/videos/rag_vertical.mp4";
 import Linear_Equations from "../assets/docs/linear_equations.pdf";
@@ -90,12 +91,23 @@ const projectData = {
   },
   chess: {
     header: "Chess Game",
-    tags: ["Strategic Gameplay", "AI Integration", "Web-Based Interface"],
+    tags: [
+      "React & Redux",
+      "Firebase Realtime DB",
+      "Realtime Multiplayer",
+      "AI Engine Integration",
+      "State Management",
+      "Sass Styling",
+    ],
     category: "Entertainment",
     timeRead: 3,
-    videoHorizontal: null,
+
+    videoHorizontal: ChessVideo,
+    horizontalDimensions: "1280 / 636",
+
     videoVertical: null,
     githubLink: "https://github.com/JakubBot/Chess-Game",
+    hostUrl: "https://jakubbot.github.io/Chess-Game/#/"
   },
 };
 

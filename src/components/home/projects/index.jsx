@@ -12,8 +12,6 @@ const Projects = () => {
         <ProjectImages
           dataDisplacementMap={Images.DisplacementEffect}
           dataImage={Images.DynamicHtml}
-          // dataImage={Images.Aeropage}
-          // link="https://builder.aeropage.io/"
           link="/projects/aeropage"
           id="aeropage"
           text="Commercial Project & Commercial Project & "
@@ -24,7 +22,6 @@ const Projects = () => {
           dataDisplacementMap={Images.DisplacementEffect}
           dataImage={Images.Medai}
           link="/projects/rag"
-          // link="https://github.com/PGRRT/rag"
           id="medical"
           text="Data & Innovation & Chat & Research & "
           name="Medical (RAG) - Research Project"
@@ -34,7 +31,6 @@ const Projects = () => {
         <ProjectImages
           dataDisplacementMap={Images.DisplacementEffect}
           dataImage={Images.LinearEquations2}
-          // link="https://github.com/JakubBot/linear_equations"
           link="/projects/linear_equations"
           text="Logic & Precision & Balance & Solve & "
           id="equations"
@@ -44,10 +40,9 @@ const Projects = () => {
         <ProjectImages
           dataDisplacementMap={Images.DisplacementEffect}
           dataImage={Images.Backgammon}
-          // link="https://github.com/JakubBot/BackGammon"
           link="/projects/backgammon"
           id="backgammon"
-          text="Roll & Move & Win & Repeat & "
+          text="Roll & Move & Block & Win & Repeat & "
           name="Backgammon"
           right
         />
@@ -55,7 +50,6 @@ const Projects = () => {
         <ProjectImages
           dataDisplacementMap={Images.DisplacementEffect}
           dataImage={Images.Chess}
-          // link="https://jakubbot.github.io/Chess-Game"
           link="/projects/chess"
           id="chess"
           text="Strategy & Focus & Patience & Victory & "

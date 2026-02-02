@@ -79,7 +79,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="wrapper">
+    <div className="wrapper" id="home_screen">
       <nav className="nav" aria-label="Main navigation">
         <button
           type="button"
@@ -94,17 +94,7 @@ const Navbar = () => {
         </button>
       </nav>
 
-      {/* <nav className="nav">
-        <div className="nav__hamburger">
-          <span
-            ref={hamburger}
-            onClick={hamburgerClick}
-            aria-expanded="false"
-            className="nav__hamburger__span icon-menu"
-            name="menu-outline"
-          ></span>
-        </div>
-      </nav> */}
+    
 
       <div className="container">
         <header className="container__header">Minimal Design</header>
@@ -113,32 +103,7 @@ const Navbar = () => {
           <span>Hel</span>
           <span>lo</span>
         </h4>
-        {/* <ul className="socials">
-          <a href="#a" className="socials__link">
-            <li className="socials__link__item">
-              <ion-icon
-                name="logo-facebook"
-                className="socials__link__icon"
-              ></ion-icon>
-            </li>
-          </a>
-          <a href="#a" className="socials__link">
-            <li className="socials__link__item">
-              <ion-icon
-                name="logo-instagram"
-                className="socials__link__icon"
-              ></ion-icon>
-            </li>
-          </a>
-          <a href="#a" className="socials__link">
-            <li className="socials__link__item">
-              <ion-icon
-                name="logo-twitter"
-                className="socials__link__icon"
-              ></ion-icon>
-            </li>
-          </a>
-        </ul> */}
+       
         <div
           id="main-menu"
           className="menu js-portfolio"
@@ -148,37 +113,30 @@ const Navbar = () => {
             <div className="menu__links menu__scroller">
               <ul className="menu__links__list">
                 <li className="js-portfolio-item menu__links__list__item">
-                  <a href="#content">
+                  <a href="#home_screen">
                     <span className="number">01. </span>
-                    <span className="destination">Home /</span>
+                    <span className="destination">Home/</span>
                     <span className="describe">intro</span>
                   </a>
                 </li>
 
                 <li className="js-portfolio-item menu__links__list__item">
-                  <a href="#work">
-                    <span className="number">02. </span>
-                    <span className="destination">Work /</span>
-                    <span className="describe">experience</span>
-                  </a>
-                </li>
-                <li className="js-portfolio-item menu__links__list__item">
                   <a href="#projects">
-                    <span className="number">03. </span>
+                    <span className="number">02. </span>
                     <span className="destination">Portfolio /</span>
                     <span className="describe">my projects</span>
                   </a>
                 </li>
                 <li className="js-portfolio-item menu__links__list__item">
                   <a href="#about">
-                    <span className="number">04. </span>
+                    <span className="number">03. </span>
                     <span className="destination">About me/</span>
                     <span className="describe">history</span>
                   </a>
                 </li>
                 <li className="js-portfolio-item menu__links__list__item">
                   <a href="#footer">
-                    <span className="number">05. </span>
+                    <span className="number">04. </span>
                     <span className="destination">Contact /</span>
                     <span className="describe">say hello</span>
                   </a>

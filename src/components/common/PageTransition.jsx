@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { css } from "@emotion/react";
 import { useLayoutEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import useViewport from "../../hooks/useViewport";
 
 const overlayStyle = css`
   position: fixed;
@@ -130,7 +131,9 @@ const PageTransition = ({ children }) => {
     revealPage();
   }, [pathname, revealPage]);
 
-  const blocks = new Array(20).fill(null);
+  const { isTabletOrSmaller } = useViewport();
+
+  const blocks = new Array(isTabletOrSmaller ? 8 : 20).fill(null);
 
   return (
     <>
