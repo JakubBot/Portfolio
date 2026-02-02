@@ -1,3 +1,6 @@
-# https://www.robotstxt.org/robotstxt.html
+# robots.txt for Jakub Bot Portfolio
+# Allow indexing of all content, except static build assets
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /static/
+Sitemap: https://jakubbot.github.io/portfolio/sitemap.xml
