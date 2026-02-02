@@ -7,7 +7,6 @@ import { typography } from "../../../constants/typography";
 
 const links = [
   { name: "Home", href: "/" },
-  { name: "Blog", href: "/blog" },
 ];
 
 const NavBar = ({ category, timeRead }) => {

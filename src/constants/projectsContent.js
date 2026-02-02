@@ -43,7 +43,50 @@ export const projectContent = {
       ],
     },
   ],
-  rag: [],
+  rag: [
+    {
+      title: "Project Overview",
+      paragraphs: [
+        "The Rag Research Project is a distributed medical chatbot designed to provide accurate, context-aware answers based on a massive corpus of over 2,000 medical documents. By utilizing Retrieval-Augmented Generation (RAG), the system doesn't just 'guess'-it retrieves relevant medical knowledge from a vector database before generating a response.",
+        "The project serves as a deep dive into high-performance backend engineering, combining cutting-edge Java features with a microservices architecture to handle complex, long-running AI tasks without compromising on speed or reliability.",
+      ],
+    },
+    {
+      title: "High-Concurrency with Java 25 & Project Loom",
+      paragraphs: [
+        "My primary focus was on optimizing the core engine for high performance. A key technical decision I made was to leverage Java 25 and Virtual Threads (Project Loom). Integrating LLMs like Bielik introduces substantial I/O-bound wait times; in a traditional environment, this would quickly exhaust standard thread pools and lead to system-wide latency.",
+        "I addressed this by architecting a scalable communication layer using Server-Sent Events (SSE). By pairing SSE with virtual threads, I ensured the system can maintain thousands of simultaneous, long-lived connections with negligible resource consumption. This architecture guarantees that the backend stays responsive even during peak traffic, delivering results efficiently without the risk of thread starvation or standard request timeouts.",
+      ],
+    },
+    {
+      title: "The Intelligence Engine: FastAPI & Milvus",
+      paragraphs: [
+        "While the core business logic resides in my Spring Boot services, the project integrates a specialized Python/FastAPI module for semantic search. This part of the system manages the RAG pipeline: encoding user queries into vectors and querying a Milvus vector database.",
+        "The architecture uses a two-stage retrieval process: first, the system fetches the top 80 most similar document chunks using cosine similarity. Then, a reranking model filters these down to the 5 most relevant pieces of context, ensuring the LLM receives only the highest-quality data to formulate its response.",
+      ],
+    },
+    {
+      title: "Optimized Communication & Traffic Control",
+      paragraphs: [
+        "To ensure low-latency communication between the 'User' and 'Chat' microservices, I replaced standard REST calls with gRPC. This optimization significantly sped up the retrieval of message history and user context, which is crucial for a smooth chat experience.",
+        "I also engineered a custom Redis middleware to act as the system's 'shield'. I implemented Bloom Filters to prevent redundant database lookups, Token Bucket rate limiting to manage traffic spikes, and JWT blacklisting-all of which made the infrastructure much more resilient.",
+      ],
+    },
+    {
+      title: "Scaling & State Synchronization",
+      paragraphs: [
+        "A critical challenge I tackled was synchronizing state across multiple instances in a distributed environment. I designed a horizontal scaling strategy using RabbitMQ Topic Exchanges.",
+        "This mechanism allows each backend instance to listen specifically for events related to the users currently connected to it. When the AI finishes generating a response, RabbitMQ ensures the message finds its way to the correct server instance and, ultimately, the correct user's browser, no matter which node they are connected to.",
+      ],
+    },
+    {
+      title: "Lessons Learned",
+      paragraphs: [
+        "Project Loom was the biggest win-using Java 25 Virtual Threads meant I could write simple, clean code that still handled hundreds of concurrent connections without the overhead of reactive programming. Swapping REST for gRPC gave a noticeable speed boost to internal communication, while mastering RabbitMQ Topic Exchanges showed me how to precisely route state across distributed nodes.",
+        "I also found the Redis optimization particularly interesting; implementing Bloom Filters was a game-changer for efficiency, as it allowed the system to instantly intercept redundant database lookups before they even hit the disk. It taught me that performance isn't just about raw speed, but about using smart data structures to protect your infrastructure from unnecessary load.",
+      ],
+    },
+  ],
 
   linear_equations: [
     {
@@ -66,7 +109,7 @@ export const projectContent = {
       title: "What I Learned",
       paragraphs: [
         "Building and testing these solvers provided several key insights:",
-        "The Power of Vectorization: The performance difference between loop-based and vectorized NumPy implementations was orders of magnitude. The time comparison graphs clearly show that for any significant matrix size, leveraging NumPy is not just an optimization—it's a necessity.",
+        "The Power of Vectorization: The performance difference between loop-based and vectorized NumPy implementations was orders of magnitude. The time comparison graphs clearly show that for any significant matrix size, leveraging NumPy is not just an optimization-it's a necessity.",
         "Algorithm Characteristics: As predicted by theory, the Gauss-Seidel method consistently converged in fewer iterations than the Jacobi method. The project also confirmed the importance of matrix properties, such as diagonal dominance, by creating scenarios where the iterative methods would diverge.",
         "Scalability Matters: The generated plots effectively visualize how each algorithm's runtime scales with the problem size. This analysis is crucial for selecting the right tool for a given task in real-world engineering and scientific applications.",
         "This project was a practical lesson in the fundamentals of numerical linear algebra, demonstrating how algorithmic choices and implementation details have a profound impact on efficiency and scalability. Keywords: Numerical Analysis, Linear Algebra, Jacobi Method, Gauss-Seidel Method, LU Decomposition, Vectorization, NumPy, Performance Benchmarking, Scientific Computing, Matrix Algorithms.",
@@ -93,7 +136,7 @@ export const projectContent = {
         "The real challenge, however, was state management. I implemented a system that serializes the entire board state into currentGame.txt, acting as a safety net that allows players to resume their matches anytime. Beyond basic gameplay, I tackled:",
         "Move Validation: Writing logic to handle 'doubles' (4 moves instead of 2) and ensuring every jump follows the strict rules of the game.",
         "Persistent Systems: Building a Hall of Fame using file I/O to track player scores across sessions.",
-        'The Replay Engine: Designing a way to log moves so players can step back through their history—essentially turning a flat text file into a "game time machine."',
+        'The Replay Engine: Designing a way to log moves so players can step back through their history-essentially turning a flat text file into a "game time machine."',
         'This project taught me that "simple" games require rigorous logic and how to structure C codebase using modular headers and source files.',
       ],
     },

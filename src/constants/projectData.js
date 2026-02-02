@@ -16,7 +16,7 @@ const projectData = {
       "Webhook & API Orchestration",
     ],
     category: "Commercial",
-    timeRead: 8,
+    timeRead: 4,
 
     // videoHorizontal: "https://youtu.be/DnkJh7brcFo?si=7kHHBp4xlKtM1Gn2",
     videoHorizontal: Aeropage,
@@ -29,9 +29,18 @@ const projectData = {
   },
   rag: {
     header: "Rag Research Project",
-    tags: ["Bielik LLM", "Distributed Systems", "Backend Optimization"],
+    tags: [
+      "RAG Architecture",
+      "Bielik LLM",
+      "Java 25",
+      "Distributed Systems",
+      "Vector Databases (Milvus)",
+      "High-Concurrency Backend",
+      "Event-Driven Architecture",
+      "gRPC & Redis Optimization",
+    ],
     category: "Research",
-    timeRead: 6,
+    timeRead: 4,
     videoHorizontal: RagVideoHorizontal,
     horizontalDimensions: "1272 / 630",
 
@@ -49,7 +58,7 @@ const projectData = {
       "Performance Benchmarking",
     ],
     category: "Education",
-    timeRead: 5,
+    timeRead: 6,
 
     videoHorizontal: Linear_Equations,
     horizontalDimensions: "1 / 1.38",
@@ -83,7 +92,7 @@ const projectData = {
     header: "Chess Game",
     tags: ["Strategic Gameplay", "AI Integration", "Web-Based Interface"],
     category: "Entertainment",
-    timeRead: 4,
+    timeRead: 3,
     videoHorizontal: null,
     videoVertical: null,
     githubLink: "https://github.com/JakubBot/Chess-Game",

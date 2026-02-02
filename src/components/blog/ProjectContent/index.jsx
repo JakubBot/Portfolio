@@ -67,7 +67,8 @@ const ProjectContent = ({ projectId }) => {
           flex-direction: column;
           gap: 2.2rem;
           padding: 20px;
-          max-width: 1000px;
+          max-width: 950px;
+          // max-width: 1000px;
           width: 100%;
           justify-content: center;
           align-items: center;
