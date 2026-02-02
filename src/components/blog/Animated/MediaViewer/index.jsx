@@ -67,6 +67,7 @@ const MediaViewer = ({
 
   if (!currentSource) return null;
 
+  const urla = `https://docs.google.com/viewer?url=${encodeURIComponent(currentSource)}&embedded=true`
   return (
     <div
       ref={containerRef}
@@ -89,7 +90,8 @@ const MediaViewer = ({
     >
       {isPdf ? (
         <iframe
-          src={finalPdfUrl}
+          src={urla}
+          // src={finalPdfUrl}
           title="Document Viewer"
           width="100%"
           height="100%"
