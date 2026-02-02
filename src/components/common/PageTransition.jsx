@@ -16,7 +16,7 @@ const overlayStyle = css`
   height: 100svh;
   display: flex;
   pointer-events: none;
-  z-index: 2;
+  z-index: 10000;
 `;
 
 const blockStyle = css`
